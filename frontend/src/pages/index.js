@@ -1,19 +1,22 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Page from "../components/page"
 
 
 // markup
 const IndexPage = ({ data }) => {
-  console.log('data', data)
   return (
-    <Layout>
+    <>
       <Seo title="Home" />   
-
-      
-    </Layout>
+      <Page
+        id={ props.pageContext.id }
+        slug={ props.pageContext.slug }
+        title={ props.pageContext.title }
+        full_width={ props.pageContext.full_width }
+      />  
+    </>
   )
 }
 

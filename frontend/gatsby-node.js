@@ -15,7 +15,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     const allPages = result.data.allStrapiPages.nodes
     allPages.forEach(({ id, slug, title, full_width }) => {
       createPage({
-        path: `/${slug}`,
+        path: slug == 'accueil' ? '/' : `/${slug}`,
         component: require.resolve("./src/templates/page"),
         context: {
           id,

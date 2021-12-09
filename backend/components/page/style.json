@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_styles",
+  "info": {
+    "name": "style",
+    "icon": "border-style"
+  },
+  "options": {},
+  "attributes": {
+    "css_id": {
+      "type": "string"
+    },
+    "css_style": {
+      "type": "string"
+    }
+  }
+}

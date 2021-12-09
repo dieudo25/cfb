@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_page_hero_images",
+  "info": {
+    "name": "hero_image",
+    "icon": "file-image"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "style": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.style"
+    }
+  }
+}

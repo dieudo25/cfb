@@ -7,7 +7,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           id
           slug
           title
-          full_width
+          full_width            
         }
       }
     }

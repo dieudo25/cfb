@@ -1,8 +1,9 @@
 {
   "collectionName": "components_page_hero_images",
   "info": {
-    "name": "hero_image",
-    "icon": "file-image"
+    "name": "heroImage",
+    "icon": "file-image",
+    "description": ""
   },
   "options": {},
   "attributes": {

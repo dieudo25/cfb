@@ -3,13 +3,13 @@ import React from 'react'
 import Page from "../components/page"
 import Seo from "../components/seo"
 
-export default (props) => {
+const PageTemplate = (props) => {
     console.log("Templates/Pages.render props", props)
     var id = props.pageContext.id;
     var title = props.pageContext.title;
     var slug = props.pageContext.slug;
-    var title = props.pageContext.title;
     var full_width = props.pageContext.full_width;
+    
     return (
         <>  
             <Seo title="Accueil" />   
@@ -22,3 +22,5 @@ export default (props) => {
         </>
     )
 }
+
+export default PageTemplate;

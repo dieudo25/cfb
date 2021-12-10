@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 
 import generateStrapiUrl from '../../../utils/strapi';
 
@@ -13,7 +14,7 @@ const HeroImage = ({ data:
 }) => (
     <section id={css_id ? css_id : ''} className={`component ${strapi_component} ${css_classes}`} >
         <img src={generateStrapiUrl(image.url)} alt={image.alternativeText} />
-        <p>{text}</p>
+        <ReactMarkdown>{text}</ReactMarkdown>
     </section>
 )
 

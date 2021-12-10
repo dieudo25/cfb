@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.centrefamilial.be`,
+    title: 'Centre Familial de Bruxelles',
   },
   plugins: [
     "gatsby-plugin-image",

@@ -1,6 +1,5 @@
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-
-  graphql(`
+   await graphql(`
     {
       allStrapiPages {
         nodes {

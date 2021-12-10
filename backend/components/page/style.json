@@ -2,14 +2,15 @@
   "collectionName": "components_page_styles",
   "info": {
     "name": "style",
-    "icon": "border-style"
+    "icon": "border-style",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "css_id": {
       "type": "string"
     },
-    "css_style": {
+    "css_classes": {
       "type": "string"
     }
   }

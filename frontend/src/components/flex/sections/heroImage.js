@@ -6,9 +6,12 @@ const HeroImage = ({ data:
     {strapi_component,
     text,
     image, 
-    style}
+    style: {
+        css_id,
+        css_classes,
+    }}
 }) => (
-    <section id={style.css_id ? style.css_id : ''} className={`component ${strapi_component} ${style.css_classes}`} >
+    <section id={css_id ? css_id : ''} className={`component ${strapi_component} ${css_classes}`} >
         <img src={generateStrapiUrl(image.url)} alt={image.alternativeText} />
         <p>{text}</p>
     </section>

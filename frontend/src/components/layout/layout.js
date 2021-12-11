@@ -24,18 +24,18 @@ const SPageContainer = styled.div`
     "main"
     "footer";
   overflow: hidden;
-`
+  
+  header {
+    grid-area: header;
+  }
 
-const SHeader = styled(Header)`
-  grid-area: header;
-`
+  main {
+    grid-area: main;
+  }
 
-const SMain = styled.main`
-  grid-area: main;
-`
-
-const SFooter = styled(Footer)`
-  grid-area: footer;
+  footer {
+    grid-area: footer;
+  }
 `
 
 const Layout = ({ children }) => {
@@ -51,9 +51,9 @@ const Layout = ({ children }) => {
 
   return (
     <SPageContainer id="page_layout">
-      <SHeader siteTitle={data.site.siteMetadata?.title || `Title`}/>
-      <SMain>{children}</SMain>
-      <SFooter/>
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`}/>
+      <main>{children}</main>
+      <Footer/>
     </SPageContainer>
   )
 }

@@ -1,12 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font: 112.5%/1.45em Quicksand, serif, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
 body {
   margin: 0;
-  color: hsla(0, 0%, 0%, 0.8);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: hsla(0, 0%, 0%, 0.6);
+  font-family: Quicksand, serif;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
 }
 article,
 aside,
@@ -21,4 +34,12 @@ nav,
 section,
 summary {
   display: block;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 27px
 }

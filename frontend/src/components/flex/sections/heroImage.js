@@ -1,38 +1,49 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
+import styled from "styled-components"
 
 import generateStrapiUrl from '../../../utils/strapi';
 
-const sectionStyle = {
-    width: "100vw",
-    height: "100vh",
-}
+const SSection = styled.section`
+    display: grid;
+    width: 100vw;
+    height: calc(100vh - 80px);
 
-const ImgStyle = {
-    width: "100%",
-    height: "100%",
-}
+    img.hero-img {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-const HeroImage = ({ data:
-    {strapi_component,
-    text,
-    image, 
-    style: {
-        css_id,
-        css_classes,
-    }}
-}) => (
-    <section 
-        id={css_id ? css_id : ''}
-        className={`component ${strapi_component} ${css_classes}`}
-        style={{sectionStyle}}
+    div.hero-text {
+        grid-column: 1;
+        grid-row: 1;
+        margin: auto auto 50vh auto;
+        text-align: center;
+
+        h1 {
+            margin-bottom: 100px;
+        }
+    }
+`
+
+const HeroImage = ({ data : { strapi_component, text, image, style }}) => (
+    <SSection 
+        id={style ? style.css_id : ''}
+        className={`component ${strapi_component} ${style ? style.css_classes : ''}`}
     >
-        <img 
+        <img
+            className="hero-img"
             src={generateStrapiUrl(image.url)}
             alt={image.alternativeText}
         />
-        <ReactMarkdown>{text}</ReactMarkdown>
-    </section>
+        <div className="hero-text">
+            <ReactMarkdown children={text} remarkPlugins={[remarkGfm]} />
+        </div>
+    </SSection>
 )
 
 export default HeroImage;

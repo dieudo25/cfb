@@ -8,33 +8,35 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Header from "./header"
 import Footer from "./footer"
 
 import "../../style/layout.css"
 
-const layout = {
-  display: "grid",
-  gridTemplateColumns: "100vw",
-  gridTemplateAreas: `
+const SPageContainer = styled.div`
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 80px 1fr 500px;
+  grid-template-areas:
     "header"
     "main"
-    "footer"
-  `
-}
+    "footer";
+  overflow: hidden;
+`
 
-const header = {
-  gridArea:"header" 
-}
+const SHeader = styled(Header)`
+  grid-area: header;
+`
 
-const main = {
-  gridArea: "main"
-}
+const SMain = styled.main`
+  grid-area: main;
+`
 
-const footer = {
-  gridArea: "footer"
-}
+const SFooter = styled(Footer)`
+  grid-area: footer;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -48,16 +50,11 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div id="page_layout" style={layout}>
-      <Header 
-        siteTitle={data.site.siteMetadata?.title || `Title`}
-        style={header}
-      />
-      <main style={main}>
-        {children}
-      </main>
-      <Footer style={footer} />
-    </div>
+    <SPageContainer id="page_layout">
+      <SHeader siteTitle={data.site.siteMetadata?.title || `Title`}/>
+      <SMain>{children}</SMain>
+      <SFooter/>
+    </SPageContainer>
   )
 }
 

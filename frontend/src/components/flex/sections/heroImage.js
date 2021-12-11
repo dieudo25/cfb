@@ -13,15 +13,15 @@ const SSection = styled.section`
     img.hero-img {
         grid-column: 1;
         grid-row: 1;
-        width: 100%;
-        height: 100%;
+        width: inherit;
+        height: inherit;
         object-fit: cover;
     }
 
     div.hero-text {
         grid-column: 1;
         grid-row: 1;
-        margin: auto auto 50vh auto;
+        margin: 30vh;
         text-align: center;
 
         h1 {

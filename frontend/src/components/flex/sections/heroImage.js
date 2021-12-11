@@ -40,7 +40,11 @@ const HeroImage = ({ data : { strapi_component, text, image, style }}) => (
             src={generateStrapiUrl(image.url)}
             alt={image.alternativeText}
         />
-        <div className="hero-text">
+        <div 
+            className="hero-text"
+            data-sal="slide-down"
+            data-sal-duration="800"
+        >
             <ReactMarkdown children={text} remarkPlugins={[remarkGfm]} />
         </div>
     </SSection>

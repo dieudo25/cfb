@@ -24,7 +24,7 @@
       "type": "dynamiczone",
       "components": [
         "page.hero-image",
-        "page.column"
+        "page.call2action"
       ]
     }
   }

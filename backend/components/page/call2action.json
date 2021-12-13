@@ -24,6 +24,11 @@
       "plugin": "upload",
       "required": true,
       "pluginOptions": {}
+    },
+    "style": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.style"
     }
   }
 }

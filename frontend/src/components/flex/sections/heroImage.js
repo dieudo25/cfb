@@ -9,6 +9,7 @@ const SSection = styled.section`
     display: grid;
     width: 100vw;
     height: calc(100vh - 80px);
+    margin: 0 auto 100px;
 
     img.hero-img {
         grid-column: 1;

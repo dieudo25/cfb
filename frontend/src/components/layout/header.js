@@ -1,40 +1,27 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
-const header = {
-  
-}
-
-const container = {
-  
-}
-
-const h1 = {
-  
-}
-
-const link = {
-  
-}
+const SHeader = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  height: 80px;
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={header}
-  >
-    <div
-      style={container}
-    >
-      <h1 style={h1}>
-        <Link
-          to="/"
-          style={link}
-        >
+  <SHeader>
+    <div>
+      <h1>
+        <Link to="/">
           {siteTitle}
         </Link>
       </h1>
     </div>
-  </header>
+  </SHeader>
 )
 
 Header.propTypes = {

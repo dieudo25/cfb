@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_call2actions",
+  "info": {
+    "name": "call2action",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    }
+  }
+}

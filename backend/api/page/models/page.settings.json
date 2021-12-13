@@ -20,10 +20,11 @@
       "type": "uid",
       "targetField": "title"
     },
-    "full_width": {
+    "content": {
       "type": "dynamiczone",
       "components": [
-        "page.hero-image"
+        "page.hero-image",
+        "page.column"
       ]
     }
   }

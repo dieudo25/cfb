@@ -6,13 +6,13 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           id
           slug
           title
-          full_width            
+          content            
         }
       }
     }
   `).then(result => {
     const allPages = result.data.allStrapiPages.nodes
-    allPages.forEach(({ id, slug, title, full_width }) => {
+    allPages.forEach(({ id, slug, title, content }) => {
       createPage({
         path: slug == 'accueil' ? '/' : `/${slug}`,
         component: require.resolve("./src/templates/page"),
@@ -20,7 +20,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           id,
           slug,
           title,
-          full_width,
+          content,
         }
       })    
     });

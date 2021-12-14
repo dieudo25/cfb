@@ -9,7 +9,7 @@ const SSection = styled.section`
     display: grid;
     width: 100vw;
     height: calc(100vh - 80px);
-    margin: 0 auto 100px;
+    margin: 0 auto;
 
     img.hero-img {
         grid-column: 1;
@@ -22,7 +22,7 @@ const SSection = styled.section`
     div.hero-text {
         grid-column: 1;
         grid-row: 1;
-        margin: 30vh;
+        margin: 30vh 0;
         text-align: center;
 
         h1 {

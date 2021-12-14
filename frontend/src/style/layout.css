@@ -43,3 +43,7 @@ h1 {
 h2 {
   font-size: 27px
 }
+
+.home-section {
+  height: calc(100vh - 80px);
+}

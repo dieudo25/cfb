@@ -8,17 +8,18 @@ import generateStrapiUrl from "../../../utils/strapi";
 
 const SSection = styled.section`
     display: grid;
-    grid-template-columns: 2fr 400px;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     max-width: 1100px;
-    margin: 0 auto 100px;
+    margin: 0 auto;
     grid-column-gap: 50px;
 
     div.img-container {
         grid-column: 1;
         grid-row: 1;
-        width: 100%;
-        height: auto;
+        width: 650px;
+        height: 450px;
+        margin: auto;
 
         img.c2a-img {
             width: 100%;

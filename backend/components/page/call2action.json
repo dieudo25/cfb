@@ -29,6 +29,16 @@
       "type": "component",
       "repeatable": false,
       "component": "page.style"
+    },
+    "first_element": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "image"
+      ],
+      "unique": true,
+      "required": true,
+      "default": "text"
     }
   }
 }

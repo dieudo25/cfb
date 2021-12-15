@@ -18,8 +18,20 @@ const Section = styled.section`
         ${ tw`
             row-span-1
             sm:col-start-2 sm:row-start-1 sm:text-right
-            md:col-start-3
         `}
+
+        ${ props => props.first_element === 'text' 
+            ? 
+            tw`
+                sm:col-start-1 sm:text-left
+            ` 
+            :  
+            tw`
+                sm:col-start-2 sm:text-right
+                md:col-start-3
+            ` 
+            
+        }
 
         div.c2a-text {
             ${tw`
@@ -32,9 +44,16 @@ const Section = styled.section`
     div.img-container {
         ${ tw`
             row-span-1 w-full
-            sm:col-start-1 sm:row-start-1
+            sm:row-start-1
             md:col-span-2
         ` }
+
+        ${ props => props.first_element === 'image' 
+            ? 
+            tw`sm:col-start-1` 
+            :  
+            tw`sm:col-start-2` 
+        }
 
         img.c2a-img {
             ${ tw`
@@ -45,12 +64,15 @@ const Section = styled.section`
 `
 
 
-const C2AImage = ({ data: { strapi_component, text, button, image, style } }) => (
+const C2AImage = ({ data: { strapi_component, text, button, image, style, first_element } }) => (
     <Section
         id={style ? style.css_id : ''}
         className={`component ${strapi_component} ${style ? style.css_classes : ''}`}
+        first_element={first_element}
     >   
-        <div className="c2a">
+        <div 
+            className="c2a" 
+        >
             <div className="c2a-text">
                 <ReactMarkdown children={text} remarkPlugins={[remarkGfm]} />
             </div>

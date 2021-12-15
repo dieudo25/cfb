@@ -1,23 +1,20 @@
 import React from "react";
-import styled from "styled-components";
+import tw, { styled } from "twin.macro"
 import { Link } from "gatsby"
 
 const SButton = styled(Link)`
-    margin-top: 20px;
-    padding: 10px 30px;
-    color: white;
-    text-decoration: none;
-
+    ${ tw`
+        bg-[#FF661B] text-white font-bold py-3 px-8 no-underline transition ease-in-out duration-500
+        hover:bg-[#DC4304] hover:transition ease-in-out
+    `}
 `
 
 const Button = ({ button: { text, color } }) => (
     <SButton
         to={'/'} 
         className="c2a-btn"
-        style={{backgroundColor: color}}
     >
         {text}
     </SButton>
 )
-
 export default Button;

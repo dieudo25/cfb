@@ -3,7 +3,7 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em Quicksand, serif, sans-serif;
+  font: 16px Quicksand, serif, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -37,13 +37,29 @@ summary {
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 2rem;
 }
-
 h2 {
-  font-size: 27px
+  font-size: 1.50rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 1.15rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: .75rem;
 }
 
-.home-section {
-  height: calc(100vh - 80px);
+p {
+}
+
+@media (min-width: 768px) {
+  .home-section {
+    height: calc(100vh - 80px);
+  }
 }

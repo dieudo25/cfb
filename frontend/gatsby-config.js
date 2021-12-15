@@ -7,8 +7,9 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-styled-components`, // To delete
     `gatsby-plugin-scroll-reveal`,
+    `gatsby-plugin-emotion`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {

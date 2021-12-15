@@ -8,7 +8,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import tw, { styled } from "twin.macro"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -16,25 +16,26 @@ import Footer from "./footer"
 import "../../style/layout.css"
 
 const SPageContainer = styled.div`
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: 80px 1fr 500px;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-  overflow: hidden;
-  
+  ${ `
+    grid w-sreen grid-rows-3 grid-cols-1 overflow-hidden
+  ` }
+
   header {
-    grid-area: header;
+    ${ tw`
+      row-start-1 h-20
+    ` }
   }
 
   main {
-    grid-area: main;
+    ${ tw`
+      row-start-2
+    ` }
   }
 
   footer {
-    grid-area: footer;
+    ${ tw`
+      row-start-3 h-[500px]
+    ` }
   }
 `
 

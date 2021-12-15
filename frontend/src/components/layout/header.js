@@ -1,15 +1,12 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import styled from "styled-components"
+import tw, { styled } from "twin.macro"
 
 const SHeader = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  height: 80px;
+  ${ tw`
+    fixed  top-0 left-0 right-0 bg-white h-20
+  ` }
 `
 
 const Header = ({ siteTitle }) => (

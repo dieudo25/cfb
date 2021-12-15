@@ -1,34 +1,31 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
-import styled from "styled-components"
+import tw, { styled } from "twin.macro"
 
 import generateStrapiUrl from '../../../utils/strapi';
 
 const SSection = styled.section`
-    display: grid;
-    width: 100vw;
-    height: calc(100vh - 80px);
-    margin: 0 auto;
+    ${ tw`
+        w-screen h-screen grid mx-auto my-0 grid-rows-1 grid-cols-1
+    ` }
 
     img.hero-img {
-        grid-column: 1;
-        grid-row: 1;
-        width: inherit;
-        height: inherit;
-        object-fit: cover;
+        ${ tw `
+            row-start-1 col-start-1 w-full h-full object-cover
+        ` }
     }
 
     div.hero-text {
-        grid-column: 1;
-        grid-row: 1;
-        margin: 30vh 0;
-        text-align: center;
+        ${ tw`
+            row-start-1 col-start-1 mx-[10%] mt-[20vh] text-center
+        ` }
 
         h1 {
-            margin-bottom: 100px;
+            mb-[10%]
         }
     }
+
 `
 
 const HeroImage = ({ data : { strapi_component, text, image, style }}) => (

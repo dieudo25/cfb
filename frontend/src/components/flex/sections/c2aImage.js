@@ -1,52 +1,52 @@
 import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
-import styled from "styled-components";
+import tw, { styled } from "twin.macro"
 import Button from "../../basic/button";
 
 import generateStrapiUrl from "../../../utils/strapi";
 
-const SSection = styled.section`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    max-width: 1100px;
-    margin: 0 auto;
-    grid-column-gap: 50px;
-
-    div.img-container {
-        grid-column: 1;
-        grid-row: 1;
-        width: 650px;
-        height: 450px;
-        margin: auto;
-
-        img.c2a-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
+const Section = styled.section`
+    ${ tw` 
+        container mx-auto w-10/12 min-h-[calc(100vh - 80px)] grid grid-rows-2 items-center
+        sm:grid-cols-2 sm:grid-rows-1 sm:gap-8  
+        md:grid-cols-3
+        xl:w-[1100px]
+    ` }
 
     div.c2a {
-        grid-area: second;
-        grid-column: 2;
-        grid-row: 1;
-        margin: auto;
-        text-align: right;
+        ${ tw`
+            row-span-1
+            sm:col-start-2 sm:row-start-1 sm:text-right
+            md:col-start-3
+        `}
 
-        a.c2a-btn {
-            margin-top: 20px;
-            padding: 10px 30px;
-            color: white;
-            text-decoration: none;
+        div.c2a-text {
+            ${tw`
+                mb-10
+                sm:mb-10
+            `}
         }
     }
 
+    div.img-container {
+        ${ tw`
+            row-span-1 w-full
+            sm:col-start-1 sm:row-start-1
+            md:col-span-2
+        ` }
+
+        img.c2a-img {
+            ${ tw`
+                w-full h-full object-contain
+            ` }
+        }
+    }
 `
 
+
 const C2AImage = ({ data: { strapi_component, text, button, image, style } }) => (
-    <SSection
+    <Section
         id={style ? style.css_id : ''}
         className={`component ${strapi_component} ${style ? style.css_classes : ''}`}
     >   
@@ -67,7 +67,7 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style } }) =>
                 alt={image.alternativeText}
             />
         </div>
-    </SSection>
+    </Section>
 )
 
 export default C2AImage;

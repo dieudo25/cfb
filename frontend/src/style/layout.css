@@ -55,9 +55,6 @@ h6 {
   font-size: .75rem;
 }
 
-p {
-}
-
 @media (min-width: 768px) {
   .home-section {
     height: calc(100vh - 80px);

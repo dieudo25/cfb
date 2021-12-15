@@ -1,9 +1,9 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from 'remark-gfm'
 import tw, { styled } from "twin.macro"
 
 import generateStrapiUrl from '../../../utils/strapi';
+
+import RichText from "../../basic/richText";
 
 const SSection = styled.section`
     ${ tw`
@@ -16,7 +16,7 @@ const SSection = styled.section`
         ` }
     }
 
-    div.hero-text {
+    div.rich-text {
         ${ tw`
             row-start-1 col-start-1 mx-[10%] mt-[20vh] text-center
         ` }
@@ -30,7 +30,7 @@ const SSection = styled.section`
 
 `
 
-const HeroImage = ({ data : { strapi_component, text, image, style }}) => (
+const HeroImage = ({ data: { strapi_component, text, image, style }}) => (
     <SSection 
         id={style ? style.css_id : ''}
         className={`component ${strapi_component} ${style ? style.css_classes : ''}`}
@@ -40,13 +40,12 @@ const HeroImage = ({ data : { strapi_component, text, image, style }}) => (
             src={generateStrapiUrl(image.url)}
             alt={image.alternativeText}
         />
-        <div 
-            className="hero-text"
-            data-sal="slide-down"
-            data-sal-duration="800"
-        >
-            <ReactMarkdown children={text} remarkPlugins={[remarkGfm]} />
-        </div>
+
+        <RichText 
+            dataSal="slide-down"
+            dataSalDuration="800"
+            text={ text }
+        />
     </SSection>
 )
 

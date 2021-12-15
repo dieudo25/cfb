@@ -1,10 +1,9 @@
 import React from "react";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import remarkGfm from "remark-gfm";
 import tw, { styled } from "twin.macro"
-import Button from "../../basic/button";
 
-import generateStrapiUrl from "../../../utils/strapi";
+import Button from "../../basic/button";
+import RichText from "../../basic/richText";
+import Image from "../../basic/image";
 
 const Section = styled.section`
     ${ tw` 
@@ -20,7 +19,7 @@ const Section = styled.section`
             sm:col-start-2 sm:row-start-1 sm:text-right
         `}
 
-        ${ props => props.first_element === 'text' 
+        ${ ({ first_element }) => first_element === 'text' 
             ? 
             tw`
                 sm:col-start-1 sm:text-left
@@ -33,7 +32,7 @@ const Section = styled.section`
             
         }
 
-        div.c2a-text {
+        div.rich-text {
             ${tw`
                 mb-10
                 sm:mb-10
@@ -48,14 +47,14 @@ const Section = styled.section`
             md:col-span-2
         ` }
 
-        ${ props => props.first_element === 'image' 
+        ${ ({ first_element }) => first_element === 'image' 
             ? 
             tw`sm:col-start-1` 
             :  
             tw`sm:col-start-2` 
         }
 
-        img.c2a-img {
+        img {
             ${ tw`
                 w-full h-full object-contain
             ` }
@@ -68,27 +67,18 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style, first_
     <Section
         id={style ? style.css_id : ''}
         className={`component ${strapi_component} ${style ? style.css_classes : ''}`}
-        first_element={first_element}
+        first_element={ first_element }
     >   
-        <div 
-            className="c2a" 
-        >
-            <div className="c2a-text">
-                <ReactMarkdown children={text} remarkPlugins={[remarkGfm]} />
-            </div>
-            <Button button={button}/>
+        <div className="c2a">
+            <RichText text={ text }/>
+            <Button button={ button }/>
         </div>
-        <div 
-            className="img-container"
-            data-sal="slide-right"
-            data-sal-duration="800"
-        >
-            <img
-                className="c2a-img"
-                src={generateStrapiUrl(image.url)}
-                alt={image.alternativeText}
-            />
-        </div>
+        <Image
+            dataSal="slide-right"
+            dataSalDuration="800"
+            image={ image }
+        />
+
     </Section>
 )
 

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_page_richtext_buttons",
+  "info": {
+    "name": "richtextButton",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
+    },
+    "first_element": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "button"
+      ],
+      "required": true,
+      "default": "text"
+    },
+    "style": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.style"
+    }
+  }
+}

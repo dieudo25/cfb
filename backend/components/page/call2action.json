@@ -36,7 +36,7 @@
         "text",
         "image"
       ],
-      "unique": true,
+      "unique": false,
       "required": true,
       "default": "text"
     }

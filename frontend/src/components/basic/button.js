@@ -4,17 +4,37 @@ import { Link } from "gatsby"
 
 const SButton = styled(Link)`
     ${ tw`
-        bg-[#FF661B] text-white font-bold py-3 px-8 no-underline transition ease-in-out duration-500
-        hover:bg-[#DC4304] hover:transition ease-in-out
+        text-white font-bold py-3 px-8 no-underline transition ease-in-out duration-500
+        hover:transition ease-in-out
     `}
+
+    ${ ({ color, color_hover }) => color
+        ?
+        `
+            background-color: ${ color };
+            &:hover {
+                background-color: ${ color_hover };
+            }
+        `
+        :
+        tw`bg-black hover:bg-gray-400`
+    }
 `
 
-const Button = ({ button: { text, color } }) => (
-    <SButton
-        to={'/'} 
-        className="c2a-btn"
+const Button = ({ button: { text, color, color_hover }, dataSal, dataSalDuration}) => (
+    <div 
+        className="btn-container"
+        data-sal={dataSal}
+        data-sal-duration={dataSalDuration}
     >
-        {text}
-    </SButton>
+        <SButton
+            to={'/'} 
+            className="btn"
+            color={ color }
+            color_hover={ color_hover }
+        >
+            {text}
+        </SButton>
+    </div>
 )
 export default Button;

@@ -12,7 +12,7 @@ const SSection = styled.section`
 
     img.hero-img {
         ${ tw `
-            row-start-1 col-start-1 w-full h-full object-cover
+            row-start-1 col-start-1 w-screen h-screen object-cover
         ` }
     }
 
@@ -22,7 +22,9 @@ const SSection = styled.section`
         ` }
 
         h1 {
-            mb-[10%]
+            ${ tw`
+                mb-20
+            ` }
         }
     }
 

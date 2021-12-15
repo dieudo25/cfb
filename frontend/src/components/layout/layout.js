@@ -16,8 +16,8 @@ import Footer from "./footer"
 import "../../style/layout.css"
 
 const SPageContainer = styled.div`
-  ${ `
-    grid w-sreen grid-rows-3 grid-cols-1 overflow-hidden
+  ${ tw`
+      w-screen overflow-hidden
   ` }
 
   header {

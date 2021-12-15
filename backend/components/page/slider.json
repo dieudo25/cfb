@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_sliders",
+  "info": {
+    "name": "slider",
+    "icon": "sliders-h",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ImageTextLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.image-text-link"
+    }
+  }
+}

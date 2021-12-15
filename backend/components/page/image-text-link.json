@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_page_image_text_links",
+  "info": {
+    "name": "ImageTextLink",
+    "icon": "chess-board"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}

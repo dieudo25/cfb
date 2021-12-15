@@ -3,6 +3,7 @@ import React from 'react';
 import HeroImage from './sections/heroImage';
 import C2AImage from './sections/c2aImage';
 import RichTextButton from './sections/richTextButton';
+import SliderCard from './../flex/sections/sliderCard';
 
 const DynamicZone = ({ sections }) => (
     <>
@@ -15,6 +16,8 @@ const DynamicZone = ({ sections }) => (
               return <C2AImage key={ `${component.strapi_component}_${component.id}` } data={component}/>
             case 'page.richtext-button':
               return <RichTextButton key={ `${component.strapi_component}_${component.id}` } data={component}/>
+            case 'page.slider':
+              return <SliderCard key={ `${component.strapi_component}_${component.id}` } data={component}/>
             default:
               return <h2 key={Math.random()}>Default case - component not found</h2>
           }

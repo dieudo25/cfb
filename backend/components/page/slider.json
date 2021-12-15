@@ -7,10 +7,25 @@
   },
   "options": {},
   "attributes": {
-    "ImageTextLink": {
+    "card": {
       "type": "component",
       "repeatable": true,
       "component": "page.image-text-link"
+    },
+    "settings": {
+      "type": "component",
+      "repeatable": false,
+      "component": "slider.settings"
+    },
+    "responsive_settings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "slider.settings"
+    },
+    "style": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.style"
     }
   }
 }

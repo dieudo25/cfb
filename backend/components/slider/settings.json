@@ -1,0 +1,76 @@
+{
+  "collectionName": "components_slider_settings",
+  "info": {
+    "name": "settings",
+    "icon": "asterisk",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "show": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "scroll": {
+      "type": "integer"
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "horizontal",
+        "vertical"
+      ],
+      "default": "horizontal",
+      "required": true
+    },
+    "vertical_swipe": {
+      "type": "boolean"
+    },
+    "speed": {
+      "type": "integer"
+    },
+    "arrows": {
+      "type": "boolean"
+    },
+    "dots": {
+      "type": "boolean"
+    },
+    "fade": {
+      "type": "boolean"
+    },
+    "infinite": {
+      "type": "boolean"
+    },
+    "pause_on_focus": {
+      "type": "boolean"
+    },
+    "pause_on_hover": {
+      "type": "boolean"
+    },
+    "pause_on_dots_hover": {
+      "type": "boolean"
+    },
+    "breakpoint": {
+      "type": "integer"
+    },
+    "center_mode": {
+      "type": "boolean"
+    },
+    "gap": {
+      "type": "integer"
+    },
+    "auto_play": {
+      "type": "boolean"
+    },
+    "swipe": {
+      "type": "boolean"
+    },
+    "rows": {
+      "type": "integer"
+    },
+    "slides_per_row": {
+      "type": "integer"
+    }
+  }
+}

@@ -17,7 +17,7 @@ import "../../style/layout.css"
 
 const SPageContainer = styled.div`
   ${ tw`
-      w-screen overflow-hidden
+    overflow-hidden
   ` }
 
   header {

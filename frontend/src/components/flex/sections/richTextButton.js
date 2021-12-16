@@ -6,8 +6,8 @@ import Button from "../../basic/button";
 
 const SSection = styled.section`
     ${ tw`
-        container mx-auto w-10/12 min-h-[calc(20vh-40px)] grid grid-rows-2 items-center
-        sm:grid-rows-1 grid-cols-2 gap-5
+        container mx-auto w-10/12 max-h-[calc(20vh-40px)] grid grid-cols-1 grid-rows-2 items-center
+        sm:grid-rows-1 sm:grid-cols-2 sm:gap-5
         md:w-[700px]
         xl:w-[900px] m-auto xl:grid-cols-3
     ` }
@@ -26,6 +26,12 @@ const SSection = styled.section`
             tw`
                 sm:col-start-2 sm:row-start-1
             `
+        }
+
+        p {
+            ${ tw`
+                text-justify
+            ` }
         }
 
     }

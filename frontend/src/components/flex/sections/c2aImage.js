@@ -5,6 +5,11 @@ import Button from "../../basic/button";
 import RichText from "../../basic/richText";
 import Image from "../../basic/image";
 
+import sm from "../../../utils/tailwindBreakpoints"
+
+let test = sm('fefe fef efefe efef');
+console.log(test);
+
 const Section = styled.section`
     ${ tw` 
         container mx-auto w-10/12 min-h-[calc(100vh - 80px)] grid grid-rows-2 items-center
@@ -37,6 +42,13 @@ const Section = styled.section`
                 mb-10
                 sm:mb-10
             `}
+
+            p {
+                ${ tw`
+                    text-justify
+                    sm:text-right
+                ` }
+            }
         }
     }
 

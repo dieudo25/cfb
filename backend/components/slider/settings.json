@@ -25,28 +25,35 @@
       "required": true
     },
     "vertical_swipe": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "speed": {
       "type": "integer"
     },
     "arrows": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "dots": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "fade": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "infinite": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "pause_on_focus": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "pause_on_hover": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "pause_on_dots_hover": {
       "type": "boolean"
@@ -55,19 +62,23 @@
       "type": "integer"
     },
     "center_mode": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "center_padding": {
       "type": "integer"
     },
     "auto_play": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "swipe": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "rows": {
-      "type": "integer"
+      "type": "integer",
+      "default": 1
     },
     "slides_per_row": {
       "type": "integer"

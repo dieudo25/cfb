@@ -4,7 +4,7 @@ import Page from "../components/page"
 import Seo from "../components/seo"
 
 const PageTemplate = ({pageContext: { id, title, slug, content }}) => (
-    <>  
+    <React.StrictMode>  
         <Seo title="Accueil" />   
         <Page
             id={ id }
@@ -12,7 +12,7 @@ const PageTemplate = ({pageContext: { id, title, slug, content }}) => (
             title={ title }
             content={ content }
         />
-    </>
+    </React.StrictMode>
 )
 
 export default PageTemplate;

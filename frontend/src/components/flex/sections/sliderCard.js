@@ -17,6 +17,22 @@ const SSection = styled.section`
             grid grid-cols-3 grid-rows-2        
         ` }
 
+        .slick-arrow{
+            ${ tw`
+                w-5 h-5 m-auto overflow-hidden bg-white border-0 bg-contain text-transparent
+        ` }
+        }
+
+        .slick-arrow.slick-prev {
+            background-image: url('/image/arrow_left_black.svg')
+            
+        }
+
+        .slick-arrow.slick-next {
+            background-image: url('/image/arrow_left_black.svg')
+            
+        }
+
         .card-container {
             ${ tw`
                 w-[225px]

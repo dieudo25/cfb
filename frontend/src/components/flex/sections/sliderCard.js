@@ -14,46 +14,59 @@ const SSection = styled.section`
 
     div.card-slider {
         ${ tw`
-            grid grid-cols-3 grid-rows-2        
+            grid grid-cols-9 grid-rows-2        
         ` }
 
         .slick-arrow{
             ${ tw`
-                w-5 h-5 m-auto overflow-hidden bg-white border-0 bg-contain text-transparent
+                col-span-1 w-5 h-5 m-auto overflow-hidden bg-white border-0 bg-contain text-transparent
         ` }
         }
 
         .slick-arrow.slick-prev {
-            background-image: url('/image/arrow_left_black.svg')
+            background-image: url('/image/arrow_left_black.svg');
             
+            ${ tw`
+                ml-0
+            ` }
         }
 
         .slick-arrow.slick-next {
-            background-image: url('/image/arrow_left_black.svg')
-            
+            background-image: url('/image/arrow_left_black.svg');
+            transform: rotateY(180deg);
+
+            ${ tw`
+                mr-0
+            ` }
         }
 
-        .card-container {
+        .slick-list {
             ${ tw`
-                w-[225px]
-            ` } 
+                col-span-7
+            ` }
 
-            .img-container {
+            .card-container {
                 ${ tw`
-                    mx-auto w-[225px] h-[350px]
-                ` }
+                    w-[225px]
+                ` } 
 
-                img {
+                .img-container {
                     ${ tw`
-                        w-full h-full object-cover
+                        mx-auto w-[225px] h-[350px]
+                    ` }
+
+                    img {
+                        ${ tw`
+                            w-full h-full object-cover
+                        ` }
+                    }
+                }
+
+                p {
+                    ${ tw`
+                        mx-auto w-[215px] text-center
                     ` }
                 }
-            }
-
-            p {
-                ${ tw`
-                    mx-auto w-[215px] text-center
-                ` }
             }
         }
     }

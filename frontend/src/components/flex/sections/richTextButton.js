@@ -7,7 +7,7 @@ import Button from "../../basic/button";
 const SSection = styled.section`
     ${ tw`
         container mx-auto w-10/12 max-h-[calc(20vh-40px)] grid grid-cols-1 grid-rows-2 items-center
-        sm:grid-rows-1 sm:grid-cols-2 sm:gap-5
+        md:grid-rows-1 md:grid-cols-2 md:gap-5
         md:w-[700px]
         xl:w-[900px] m-auto xl:grid-cols-3
     ` }
@@ -20,11 +20,11 @@ const SSection = styled.section`
         ${ ({ first_element }) => first_element === 'text'
             ?
             tw`
-                sm:col-start-1 sm:row-start-1 
+                md:col-start-1 md:row-start-1 
             `
             :
             tw`
-                sm:col-start-2 sm:row-start-1
+                md:col-start-2 md:row-start-1
             `
         }
 
@@ -38,17 +38,17 @@ const SSection = styled.section`
     div.btn-container {
         ${ tw`
             mx-auto
-            sm:mr-0
+            md:mr-0
         ` }
 
         ${ ({ first_element }) => first_element === 'button'
             ?
             tw`
-                sm:col-start-1 sm:row-start-1 
+                md:col-start-1 md:row-start-1 
             `
             :
             tw`
-                sm:col-start-2 sm:row-start-1
+                md:col-start-2 md:row-start-1
                 xl:col-start-3
             `
         }

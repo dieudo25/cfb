@@ -88,7 +88,7 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style, first_
         <Image
             dataSal="slide-right"
             dataSalDuration="800"
-            image={ image }
+            image={ image.formats.small }
         />
 
     </Section>

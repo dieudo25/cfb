@@ -14,7 +14,7 @@ const SSection = styled.section`
 
     div.card-slider {
         ${ tw`
-            grid grid-cols-9 grid-rows-2        
+            grid grid-cols-9 grid-rows-[8fr 1fr]        
         ` }
 
         .slick-arrow{
@@ -66,6 +66,50 @@ const SSection = styled.section`
                     ${ tw`
                         mx-auto w-[215px] text-center
                     ` }
+                }
+            }
+        }
+
+        ul.slick-dots {
+            ${ tw`
+                
+            ` }
+
+            position: absolute;
+            bottom: 25px;
+            list-style: none;
+            display: block;
+            text-align: center;
+            padding: 0;
+            width: 100%;
+            margin: 0px;
+
+            li {
+                position: relative;
+                display: inline-block;
+                margin: 0 8px;
+                padding: 0;
+                cursor: pointer;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                width: fit-content;
+
+                button {
+                    position: relative;
+                    background-color: #C4C4C4;
+                    opacity: .5;
+                    width: 50px;
+                    height: 5px;
+                    padding: 0;
+                    border: 0;
+                    font-size: 0;
+                }
+            }
+
+            li.slick-active {
+                button {
+                    background-color: #FF661B;
+                    opacity: 100%;
                 }
             }
         }

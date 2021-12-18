@@ -4,7 +4,8 @@ import { Link } from "gatsby"
 
 const SButton = styled(Link)`
     ${ tw`
-        text-white font-bold py-3 px-8 no-underline transition ease-in-out duration-500
+        text-white font-bold p-5 no-underline transition ease-in-out duration-500
+        sm:py-3 sm:px-8
         hover:transition ease-in-out
     `}
 
@@ -27,14 +28,14 @@ const Button = ({ button: { text, color, color_hover }, dataSal, dataSalDuration
         data-sal={dataSal}
         data-sal-duration={dataSalDuration}
     >
-        <SButton
+        {<SButton
             to={'/'} 
             className="btn"
             color={ color }
             color_hover={ color_hover }
         >
             {text}
-        </SButton>
+        </SButton>}
     </div>
 )
 export default Button;

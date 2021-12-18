@@ -7,12 +7,9 @@ import Image from "../../basic/image";
 
 import sm from "../../../utils/tailwindBreakpoints"
 
-let test = sm('fefe fef efefe efef');
-console.log(test);
-
 const Section = styled.section`
     ${ tw` 
-        container mx-auto w-10/12 min-h-[calc(100vh - 80px)] grid grid-rows-2 items-center
+        container mx-auto w-10/12 min-h-[calc(100vh - 80px)] grid grid-rows-2 items-center 
         sm:grid-cols-2 sm:grid-rows-1 sm:gap-8  
         md:grid-cols-3
         xl:w-[1100px]

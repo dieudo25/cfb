@@ -19,7 +19,8 @@ const SSection = styled.section`
 
         .slick-arrow{
             ${ tw`
-                col-span-1 w-5 h-5 m-auto overflow-hidden bg-white border-0 bg-contain text-transparent
+                col-span-1 w-5 h-5 m-auto overflow-hidden bg-white border-0 bg-contain text-transparent bg-no-repeat
+                xsm:w-10 h-10
         ` }
         }
 
@@ -72,30 +73,18 @@ const SSection = styled.section`
 
         ul.slick-dots {
             ${ tw`
-                
+                m-auto p-0 w-full col-span-10 text-center
             ` }
 
-            position: absolute;
-            bottom: 25px;
-            list-style: none;
-            display: block;
-            text-align: center;
-            padding: 0;
-            width: 100%;
-            margin: 0px;
-
             li {
-                position: relative;
-                display: inline-block;
-                margin: 0 8px;
-                padding: 0;
-                cursor: pointer;
-                width: -webkit-fit-content;
-                width: -moz-fit-content;
-                width: fit-content;
+                ${ tw`
+                    w-auto inline-block mx-2 cursor-pointer 
+                ` }
 
                 button {
-                    position: relative;
+                    ${ `
+                        
+                    ` }
                     background-color: #C4C4C4;
                     opacity: .5;
                     width: 50px;

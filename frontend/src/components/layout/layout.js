@@ -28,7 +28,8 @@ const SPageContainer = styled.div`
 
   main {
     ${ tw`
-      row-start-2
+      row-start-2 grid row-auto 
+     
     ` }
   }
 

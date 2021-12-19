@@ -16,10 +16,21 @@ module.exports = {
         'xl': '1280px',
         // => @media (min-width: 1280px) { ... }
       },
+
       extend: {
+        colors: {
+          main: {
+            500: '#FF661B',
+            900: '#DC4304',
+          },
+          second: {
+            500: '#0764A1',
+          },
+        },
+
         width: {
           'fit-content': 'fit-content',
-        }
-      }
+        },
+      },
     }
 }

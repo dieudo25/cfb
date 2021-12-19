@@ -6,7 +6,7 @@ import Button from "../../basic/button";
 
 const SSection = styled.section`
     ${ tw`
-        container mx-auto w-10/12 max-h-[calc(20vh-40px)] grid grid-cols-1 grid-rows-2 items-center
+        container mx-auto w-10/12 grid grid-cols-1 grid-rows-2 items-center
         md:grid-rows-1 md:grid-cols-2 md:gap-5
         md:w-[700px]
         xl:w-[900px] m-auto xl:grid-cols-3

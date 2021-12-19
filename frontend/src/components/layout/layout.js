@@ -28,9 +28,24 @@ const SPageContainer = styled.div`
 
   main {
     ${ tw`
-      row-start-2 grid row-auto 
-     
+      row-start-2 grid 
     ` }
+
+    section.home-section-cta {
+      ${ tw`
+        row-start-3 row-end-7 row-span-2 min-h-[35vh]
+      ` }
+
+
+    }
+
+    section.home-slider {
+      ${ tw`
+        row-start-3 row-end-7 row-span-2 min-h-[65vh]
+    ` }
+    }
+
+
   }
 
   footer {

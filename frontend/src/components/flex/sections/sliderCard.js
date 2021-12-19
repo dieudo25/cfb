@@ -9,7 +9,7 @@ import Image from "../../basic/image";
 
 const SSection = styled.section`
     ${ tw`
-        mx-auto w-10/12 min-h-[calc(80vh - 40px)]
+        mx-auto w-10/12 
     ` }
 
     div.card-slider {
@@ -82,29 +82,24 @@ const SSection = styled.section`
                 ` }
 
                 button {
-                    ${ `
-                        
+                    ${ tw`
+                        bg-gray-200 w-[50px] h-[5px] p-0 border-0 text-[0px]
                     ` }
-                    background-color: #C4C4C4;
-                    opacity: .5;
-                    width: 50px;
-                    height: 5px;
-                    padding: 0;
-                    border: 0;
-                    font-size: 0;
                 }
             }
 
             li.slick-active {
                 button {
-                    background-color: #FF661B;
-                    opacity: 100%;
+                    ${ tw`
+                        bg-main-500
+                    ` }
                 }
             }
         }
     }
 
 `
+
 
 const SliderCard = ({
     data: {
@@ -115,6 +110,31 @@ const SliderCard = ({
         responsive_settings,
     } 
 }) => {
+
+    let responsive = responsive_settings.map((settings) => ({
+        breakpoint: settings.breakpoint,
+        settings: {
+            autoplay: settings.auto_play,
+            speed: settings.speed,
+            arrows: settings.arrows,
+            dots: settings.dots,
+            fade: settings.fade,
+            infinite: settings.infinite,
+            pauseOnFocus: settings.pause_on_focus,
+            pauseOnHover: settings.pause_on_hover,
+            pauseOnDotsHover: settings.pause_on_dots_hover,
+            slidesToShow: settings.slide_to_show,
+            slideToScroll: settings.slide_to_scroll,
+            swipeToSlide: settings.swipe,
+            vertical: settings.direction === "vertical" ? true : false,
+            verticalSwiping: settings.vertical_swipe,
+            centerMode: settings.center_mode,
+            centerPadding: settings.center_padding,
+            breakpoint: settings.breakpoint,
+        }
+    }))
+
+    console.log("responsive formated", responsive);
 
     const slideSettings = {
         className: "card-slider",
@@ -134,6 +154,8 @@ const SliderCard = ({
         verticalSwiping: settings.vertical_swipe,
         centerMode: settings.center_mode,
         centerPadding: settings.center_padding,
+        mobileFirst: true,
+        responsive: responsive,
     }
 
     return (

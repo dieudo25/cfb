@@ -61,20 +61,20 @@ const SSection = styled.section`
     }
 `
 
-const RichTextButton = ({ data: {strapi_component, text, button, first_element, style } }) => (
+const RichTextButton = ({ data: {strapi_component, text, button, first_element, style, animation_text, animation_button } }) => (
     <SSection
-        id={style ? style.css_id : ''}
-        className={`component ${strapi_component} ${style ? style.css_classes : ''}`}
+        id={ style && style.css_id }
+        className={ `component ${strapi_component} ${style && style.css_classes }` }
         first_element={ first_element }
     >
         <RichText 
-            dataSal={first_element === "text" ? "slide-right" : "slide-left"}
+            dataSal={ animation_text && animation_text.type.replace('_', '-') }
             dataSalDuration="800"
             text={ text }
         />
         <Button 
             button={ button }
-            dataSal={first_element === "button" ? "slide-right" : "slide-left"}
+            dataSal={ animation_button && animation_button.type.replace('_', '-') }
             dataSalDuration="800"
         />
     </SSection>

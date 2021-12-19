@@ -28,7 +28,7 @@ const SPageContainer = styled.div`
 
   main {
     ${ tw`
-      row-start-2 grid 
+      row-start-2 grid
     ` }
 
     section.home-section-cta {

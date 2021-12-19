@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_animation_animations",
+  "info": {
+    "name": "animation",
+    "icon": "angle-double-right"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "fade",
+        "slide_up",
+        "slide_down",
+        "slide_left",
+        "slide_right",
+        "zoom_in",
+        "zoom_out",
+        "flip_up",
+        "flip_down",
+        "flip_left",
+        "flip_right"
+      ]
+    }
+  }
+}

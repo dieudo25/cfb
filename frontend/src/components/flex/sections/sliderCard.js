@@ -160,8 +160,8 @@ const SliderCard = ({
 
     return (
         <SSection
-            id={style ? style.css_id : ''}
-            className={`component ${strapi_component} ${style ? style.css_classes : ''}`}
+            id={ style && style.css_id }
+            className={ `component ${strapi_component} ${style && style.css_classes }` }
         >
             <Slider { ...slideSettings }>
                 {card.map((slide) => (

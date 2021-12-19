@@ -31,6 +31,7 @@ function Seo({ description, lang, meta, title }) {
     <Helmet
       htmlAttributes={{
         lang,
+        class: "scroll-smooth"
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}

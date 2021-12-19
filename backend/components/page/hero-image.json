@@ -27,6 +27,11 @@
       "type": "component",
       "repeatable": false,
       "component": "page.style"
+    },
+    "animation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "animation.animation"
     }
   }
 }

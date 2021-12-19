@@ -5,8 +5,6 @@ import Button from "../../basic/button";
 import RichText from "../../basic/richText";
 import Image from "../../basic/image";
 
-import sm from "../../../utils/tailwindBreakpoints"
-
 const Section = styled.section`
     ${ tw` 
         container mx-auto w-10/12 min-h-[calc(100vh - 80px)] grid grid-rows-2 items-center 
@@ -43,8 +41,18 @@ const Section = styled.section`
             p {
                 ${ tw`
                     text-justify
-                    sm:text-right
                 ` }
+
+                ${ ({ first_element }) => first_element === 'text' 
+                    ? 
+                    tw`
+                        sm:text-left
+                    ` 
+                    :  
+                    tw`
+                        sm:text-right
+                    ` 
+                }
             }
         }
     }
@@ -53,7 +61,8 @@ const Section = styled.section`
         ${ tw`
             row-span-1 w-full
             sm:row-start-1
-            md:col-span-2
+            md:col-span-2 
+            lg:h-[455px]
         ` }
 
         ${ ({ first_element }) => first_element === 'image' 
@@ -66,16 +75,19 @@ const Section = styled.section`
         img {
             ${ tw`
                 w-full h-full object-contain
+                md:object-cover
             ` }
         }
     }
 `
 
 
-const C2AImage = ({ data: { strapi_component, text, button, image, style, first_element } }) => (
+
+
+const C2AImage = ({ data: { strapi_component, text, button, image, style, first_element, animation } }) => (
     <Section
-        id={style ? style.css_id : ''}
-        className={`component ${strapi_component} ${style ? style.css_classes : ''}`}
+        id={ style && style.css_id }
+        className={ `component ${strapi_component} ${style && style.css_classes }` }
         first_element={ first_element }
     >   
         <div className="c2a">
@@ -83,7 +95,7 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style, first_
             <Button button={ button }/>
         </div>
         <Image
-            dataSal="slide-right"
+            dataSal={ animation && animation.type.replace('_', '-') }
             dataSalDuration="800"
             image={ image.formats.small }
         />

@@ -39,6 +39,11 @@
       "unique": false,
       "required": true,
       "default": "text"
+    },
+    "animation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "animation.animation"
     }
   }
 }

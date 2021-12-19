@@ -11,7 +11,7 @@ const SSection = styled.section`
 
     div.img-container {
         ${ tw`
-            row-start-1
+            w-screen h-screen
         ` }
 
         img {
@@ -25,7 +25,7 @@ const SSection = styled.section`
 
     div.rich-text {
         ${ tw`
-            row-end-2 col-start-1 mt-[15vh] w-screen text-center
+            row-end-2 col-start-1 mt-[15vh] w-screen h-screen text-center
             md:mt-[20vh]
         ` }
 
@@ -45,17 +45,16 @@ const SSection = styled.section`
 
 `
 
-const HeroImage = ({ data: { strapi_component, text, image, style }}) => (
+const HeroImage = ({ data: { strapi_component, text, image, style, animation } }) => (
     <SSection 
-        id={style ? style.css_id : ''}
-        className={`component ${strapi_component} ${style ? style.css_classes : ''}`}
+        id={ style && style.css_id }
+        className={ `component ${strapi_component} ${style && style.css_classes }` }
     >
         <Image
-            image={ image.formats.large }
+            image={ image }
         />
-
         <RichText 
-            dataSal="slide-down"
+            dataSal={ animation && animation.type.replace('_', '-') }
             dataSalDuration="800"
             text={ text }
         />

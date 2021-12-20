@@ -55,7 +55,7 @@ const SPageContainer = styled.div`
 
   footer {
     ${ tw`
-      row-start-3 h-[500px]
+      h-[500px]
     ` }
   }
 `
@@ -77,8 +77,7 @@ const Layout = ({ slug, children }) => {
       <Header siteTitle={ slug || `Title`}/>
       <main className={`page-${ slug } snap snap-y snap-mandatory`} >
         {children}
-      <section><Footer/></section>
-
+        <Footer/>
       </main>
     </SPageContainer>
   )

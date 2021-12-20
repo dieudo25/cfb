@@ -15,6 +15,21 @@ module.exports = {
   
         'xl': '1280px',
         // => @media (min-width: 1280px) { ... }
+
+        'max-xsm': {'max': '360px'},
+        // => @media (max-width: 640px) { ... }
+
+        'max-sm': {'max': '640px'},
+        // => @media (max-width: 640px) { ... }
+
+        'max-md': {'max': '768px'},
+        // => @media (max-width: 768px) { ... }
+
+        'max-lg': {'max': '1024px'},
+        // => @media (max-width: 1024px) { ... }
+
+        'max-xl': {'max': '1280px'},
+        // => @media (max-width: 1280px) { ... }
       },
 
       extend: {
@@ -26,6 +41,9 @@ module.exports = {
           second: {
             500: '#0764A1',
           },
+          dark: {
+            500: '#00000099',
+          }
         },
 
         width: {

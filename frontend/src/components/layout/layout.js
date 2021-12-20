@@ -27,8 +27,9 @@ const SPageContainer = styled.div`
   }
 
   main {
+    scroll-behavior: smooth;
     ${ tw`
-      row-start-2 grid
+      row-start-2 grid overflow-x-hidden 
     ` }
 
     section.home-section-cta {
@@ -44,8 +45,12 @@ const SPageContainer = styled.div`
         row-start-3 row-end-7 row-span-2 min-h-[65vh]
     ` }
     }
+  }
 
-
+  main.page-accueil {
+    ${ tw`
+      max-h-screen overflow-y-scroll
+    ` }
   }
 
   footer {
@@ -55,7 +60,8 @@ const SPageContainer = styled.div`
   }
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ slug, children }) => {
+  console.log('slug', slug)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -68,9 +74,12 @@ const Layout = ({ children }) => {
 
   return (
     <SPageContainer id="page_layout">
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`}/>
-      <main>{children}</main>
-      <Footer/>
+      <Header siteTitle={ slug || `Title`}/>
+      <main className={`page-${ slug } snap snap-y snap-mandatory`} >
+        {children}
+      <section><Footer/></section>
+
+      </main>
     </SPageContainer>
   )
 }

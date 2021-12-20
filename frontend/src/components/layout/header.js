@@ -125,7 +125,7 @@ const Header = () => {
         </div>
         <nav className={ `menu ${ isMenuActive ? 'is-visible' : 'is-hidden' }` } isActive={ isMenuActive }>
           { menu.map((link) => (
-            <Link to={`/${ link.page.title === "accueil" ? "" : link.page.title }`}>{ link.page.title }</Link>
+            <Link key={link.page.slug} to={`/${ link.page.title === "accueil" ? "" : link.page.title }`}>{ link.page.title }</Link>
           )) }
         </nav>
       </div>

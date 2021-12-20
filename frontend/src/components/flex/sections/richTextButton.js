@@ -64,7 +64,7 @@ const SSection = styled.section`
 const RichTextButton = ({ data: {strapi_component, text, button, first_element, style, animation_text, animation_button } }) => (
     <SSection
         id={ style && style.css_id }
-        className={ `component ${strapi_component} ${style && style.css_classes }` }
+        className={ `component ${strapi_component} ${style && style.css_classes } snap-start` }
         first_element={ first_element }
     >
         <RichText 

@@ -1,7 +1,7 @@
 import * as React from "react"
 
 const Footer = () => (
-    <footer style={{backgroundColor: "purple"}}>
+    <footer className="snap-start" style={{backgroundColor: "purple"}}>
         Footer
     </footer>
 )

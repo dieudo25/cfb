@@ -134,8 +134,6 @@ const SliderCard = ({
         }
     }))
 
-    console.log("responsive formated", responsive);
-
     const slideSettings = {
         className: "card-slider",
         autoplay: settings.auto_play,

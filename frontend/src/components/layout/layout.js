@@ -22,7 +22,7 @@ const SPageContainer = styled.div`
 
   header {
     ${ tw`
-      row-start-1 h-20
+      row-start-1 min-h-[80px]
     ` }
   }
 

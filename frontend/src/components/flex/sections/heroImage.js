@@ -48,7 +48,7 @@ const SSection = styled.section`
 const HeroImage = ({ data: { strapi_component, text, image, style, animation } }) => (
     <SSection 
         id={ style && style.css_id }
-        className={ `component ${strapi_component} ${style && style.css_classes } snap-start` }
+        className={ `component ${strapi_component} ${style && style.css_classes }` }
     >
         <Image
             image={ image }

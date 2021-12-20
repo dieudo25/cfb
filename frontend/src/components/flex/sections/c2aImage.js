@@ -87,7 +87,7 @@ const Section = styled.section`
 const C2AImage = ({ data: { strapi_component, text, button, image, style, first_element, animation } }) => (
     <Section
         id={ style && style.css_id }
-        className={ `component ${strapi_component} ${style && style.css_classes } snap-start` }
+        className={ `component ${strapi_component} ${style && style.css_classes }` }
         first_element={ first_element }
     >   
         <div className="c2a">

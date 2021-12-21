@@ -3,7 +3,7 @@ import tw, { styled } from "twin.macro"
 import Slider  from "react-slick";
 import "../../../style/slick.css"
 
-import Image from "../../basic/image";
+import Card from "../../basic/card";
 
 
 
@@ -48,17 +48,38 @@ const SSection = styled.section`
 
             .card-container {
                 ${ tw`
-                    w-[225px]
+                    w-[225px] mx-auto
                 ` } 
 
                 .img-container {
                     ${ tw`
-                        mx-auto w-[225px] h-[350px]
+                        mx-auto w-[225px] h-[350px] bg-purple-500 relative z-20
                     ` }
+
+                    &:hover {
+
+                        &:after {
+                            content: '';
+                            background-image: url('/image/add_circle_outline_white.svg');
+    
+                            ${ tw`
+                                block bg-no-repeat bg-contain w-[45px] h-[45px] absolute top-[calc(50% - calc(45px / 2))] left-[calc(50% - calc(45px / 2))] z-0
+                            ` }
+                        }
+
+                        img {
+                            ${ tw`
+                                opacity-40 transition
+                            ` }
+
+                        }
+
+                    }
 
                     img {
                         ${ tw`
-                            w-full h-full object-cover
+                            w-full h-full object-cover z-10 transition
+                            
                         ` }
                     }
                 }
@@ -162,11 +183,8 @@ const SliderCard = ({
             className={ `component ${strapi_component} ${style && style.css_classes }` }
         >
             <Slider { ...slideSettings }>
-                {card.map((slide) => (
-                    <div key={`slide-${slide.id}`} className="card-container">
-                        <Image image={ slide.image.formats.small }/>
-                        <p>{ slide.text }</p>
-                    </div>
+                {card.map((item) => (
+                    <Card data={ item }/>
                 ))}
             </Slider>
         </SSection>

@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import tw, { styled } from "twin.macro"
 import { useStaticQuery, graphql } from "gatsby"
+
+import MenuList from "../basic/menuList"
 import Image from "../basic/image"
 
 const SSection = styled.section`
@@ -30,7 +32,7 @@ const SSection = styled.section`
         .img-container {
           ${ tw`
             w-[58px]
-            md:w-[100px]
+            md:w-[80px]
           ` }
         }
       }
@@ -46,36 +48,20 @@ const SSection = styled.section`
       }
     }
 
-    nav.menu {
-      ${ tw`
-        flex-col flex-grow pb-4 text-center transition ease-in-out transition-all
-        md:pb-0 md:flex md:justify-end md:flex-row
-      ` }
-
-      a {
-        ${ tw`
-          uppercase px-4 py-2 mt-2 font-semibold no-underline text-dark-500 transition ease-in-out
-          md:mt-0 
-          hover:text-second-500 hover:transition ease-in-out
-      ` }
-      }
-      
-    }
-
     nav.menu.is-visible {
       ${ tw`
-        block transition max-md:h-[calc(100vh - 80px)] ease-in-out transition-all
+        max-mdd:h-[calc(100vh - 80px)]
       ` }
     }
 
     nav.menu.is-hidden {
       ${ tw`
-        max-md:hidden max-md:h-0 transition ease-in-out transition-all
+        max-mdd:hidden max-mdd:h-0 transition ease-in-out transition-all
       ` }
 
       a {
         ${ tw`
-          max-md:hidden
+          max-mdd:hidden
         ` }
       }
     }
@@ -123,11 +109,7 @@ const Header = () => {
           </Link>
           <button className="small-device" aria-label="toggle-nav-menu" onClick={ () => setIsMenuActive(!isMenuActive) } />
         </div>
-        <nav className={ `menu ${ isMenuActive ? 'is-visible' : 'is-hidden' }` } isActive={ isMenuActive }>
-          { menu.map((link) => (
-            <Link key={link.page.slug} to={`/${ link.page.title === "accueil" ? "" : link.page.title }`}>{ link.page.title }</Link>
-          )) }
-        </nav>
+        <MenuList menu={ menu } isMenuActive={ isMenuActive }  />
       </div>
     </SSection>
   )

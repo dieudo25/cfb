@@ -60,21 +60,21 @@ img {
   height: 100%;
 }
 
-.snap {
-  scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
-}
-.snap-y {
-  --scroll-snap-direction: y;
-}
-.snap-mandatory {
-  --scroll-snap-constraint: mandatory;
-}
-.snap-start {
-  scroll-snap-align: start;
-}
-
 @media (min-width: 768px) {
   .home-section {
     height: 100vh;
+  }
+
+  .snap {
+    scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
+  }
+  .snap-y {
+    --scroll-snap-direction: y;
+  }
+  .snap-mandatory {
+    --scroll-snap-constraint: mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
   }
 }

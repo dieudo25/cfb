@@ -7,7 +7,6 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 
 import Header from "./header"
@@ -55,24 +54,12 @@ const SPageContainer = styled.div`
 
   footer {
     ${ tw`
-      h-[500px]
+
     ` }
   }
 `
 
-const Layout = ({ slug, children }) => {
-  console.log('slug', slug)
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
+const Layout = ({ slug, children }) => (
     <SPageContainer id="page_layout">
       <Header siteTitle={ slug || `Title`}/>
       <main className={`page-${ slug } snap snap-y snap-mandatory`} >
@@ -80,8 +67,7 @@ const Layout = ({ slug, children }) => {
         <Footer/>
       </main>
     </SPageContainer>
-  )
-}
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

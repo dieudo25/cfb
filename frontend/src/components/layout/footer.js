@@ -144,7 +144,7 @@ const Footer = () => {
                 <MenuList menu={ menu } isMenuActive={ true }  />
                 <div className="footer-cards">
                     { card.map((item) => (
-                        <div className="card-container">
+                        <div key={`card-${item.id}`} className="card-container">
                             <Image image={ item.image.formats.thumbnail } />
                             <div className="card-text">
                                 <p>{ item.text }</p>

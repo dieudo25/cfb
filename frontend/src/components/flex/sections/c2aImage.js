@@ -97,7 +97,7 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style, first_
         <Image
             dataSal={ animation && animation.type.replace('_', '-') }
             dataSalDuration="800"
-            image={ image.formats.small }
+            image={ image.formats.medium }
         />
 
     </Section>

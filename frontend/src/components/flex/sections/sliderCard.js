@@ -1,7 +1,8 @@
 import React from "react";
 import tw, { styled } from "twin.macro"
+import { Link } from "gatsby";
 import Slider  from "react-slick";
-import "../../../style/slick.css"
+import "../../../style/slick.css";
 
 import Card from "../../basic/card";
 
@@ -12,7 +13,7 @@ const SSection = styled.section`
         mx-auto w-10/12 
     ` }
 
-    div.card-slider {
+    div.cards-slider {
         ${ tw`
             grid grid-cols-9 grid-rows-[8fr 1fr]        
         ` }
@@ -46,48 +47,54 @@ const SSection = styled.section`
                 col-span-7
             ` }
 
-            .card-container {
+            a {
                 ${ tw`
-                    w-[225px] mx-auto
-                ` } 
+                    no-underline text-dark-500
+                ` }
 
-                .img-container {
+                .card-container {
                     ${ tw`
-                        mx-auto w-[225px] h-[350px] bg-purple-500 relative z-20
-                    ` }
-
-                    &:hover {
-
-                        &:after {
-                            content: '';
-                            background-image: url('/image/add_circle_outline_white.svg');
+                        w-[225px] mx-auto
+                    ` } 
     
-                            ${ tw`
-                                block bg-no-repeat bg-contain w-[45px] h-[45px] absolute top-[calc(50% - calc(45px / 2))] left-[calc(50% - calc(45px / 2))] z-0
-                            ` }
+                    .img-container {
+    
+                        ${ tw`
+                            mx-auto w-[225px] h-[350px] relative z-20
+                        ` }
+    
+                        &:hover {
+    
+                            &:after {
+                                content: '';
+                                background-image: url('/image/add_circle_outline_white.svg');
+        
+                                ${ tw`
+                                    block bg-no-repeat bg-contain w-[45px] h-[45px] absolute top-[calc(50% - calc(45px / 2))] left-[calc(50% - calc(45px / 2))] z-0 transition
+                                ` }
+                            }
+    
+                            img {
+                                ${ tw`
+                                    opacity-40 transition
+                                ` }
+                            }
+    
                         }
-
+    
                         img {
                             ${ tw`
-                                opacity-40 transition
+                                w-full h-full object-cover z-10 transition
+                                
                             ` }
-
                         }
-
                     }
-
-                    img {
+    
+                    p {
                         ${ tw`
-                            w-full h-full object-cover z-10 transition
-                            
+                            mx-auto w-[215px] text-center
                         ` }
                     }
-                }
-
-                p {
-                    ${ tw`
-                        mx-auto w-[215px] text-center
-                    ` }
                 }
             }
         }
@@ -125,7 +132,7 @@ const SSection = styled.section`
 const SliderCard = ({
     data: {
         strapi_component,
-        card,
+        cards,
         style,
         settings,
         responsive_settings,
@@ -156,7 +163,7 @@ const SliderCard = ({
     }))
 
     const slideSettings = {
-        className: "card-slider",
+        className: "cards-slider",
         autoplay: settings.auto_play,
         speed: settings.speed,
         arrows: settings.arrows,
@@ -183,8 +190,10 @@ const SliderCard = ({
             className={ `component ${strapi_component} ${style && style.css_classes }` }
         >
             <Slider { ...slideSettings }>
-                {card.map((item) => (
-                    <Card data={ item }/>
+                {cards.map((item) => (
+                    <Link key={`slide-${ item.id }`} to={item.page && item.page.slug != 'accueil' ? item.page.slug : '/' }>
+                        <Card data={ item }/>
+                    </Link>
                 ))}
             </Slider>
         </SSection>

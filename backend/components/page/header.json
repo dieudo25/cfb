@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_page_cards",
+  "collectionName": "components_page_headers",
   "info": {
-    "name": "card",
-    "icon": "address-card",
-    "description": ""
+    "name": "header",
+    "icon": "image"
   },
   "options": {},
   "attributes": {
@@ -18,14 +17,12 @@
       "pluginOptions": {}
     },
     "text": {
-      "type": "string",
-      "required": true
-    },
-    "color": {
       "type": "string"
     },
-    "page": {
-      "model": "page"
+    "style": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.style"
     }
   }
 }

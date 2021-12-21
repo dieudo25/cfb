@@ -7,11 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "card": {
-      "type": "component",
-      "repeatable": true,
-      "component": "page.image-text-link"
-    },
     "settings": {
       "type": "component",
       "repeatable": false,
@@ -26,6 +21,11 @@
       "type": "component",
       "repeatable": false,
       "component": "page.style"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.card"
     }
   }
 }

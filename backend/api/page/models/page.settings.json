@@ -26,7 +26,8 @@
         "page.hero-image",
         "page.call2action",
         "page.richtext-button",
-        "page.slider"
+        "page.slider",
+        "page.header"
       ]
     }
   }

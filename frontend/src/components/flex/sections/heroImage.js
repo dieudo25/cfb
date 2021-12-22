@@ -50,9 +50,7 @@ const HeroImage = ({ data: { strapi_component, text, image, style, animation } }
         id={ style && style.css_id }
         className={ `component ${strapi_component} ${style && style.css_classes }` }
     >
-        <Image
-            image={ image }
-        />
+        <Image image={ image } />
         <RichText 
             dataSal={ animation && animation.type.replace('_', '-') }
             dataSalDuration="800"

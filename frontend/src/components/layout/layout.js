@@ -19,10 +19,14 @@ const SPageContainer = styled.div`
     
   ` }
 
-  header {
+  .main-nav {
     ${ tw`
       row-start-1 min-h-[80px]
     ` }
+
+    ${ ({ className }) => (className === "page-accueil" && tw`
+      fixed
+    `) }
   }
 
   main {
@@ -33,25 +37,9 @@ const SPageContainer = styled.div`
       row-start-2 grid overflow-x-hidden 
     ` }
 
-    section.home-section-cta {
-      ${ tw`
-        row-start-3 row-end-7 row-span-2 min-h-[35vh]
-      ` }
-
-
-    }
-
-    section.home-slider {
-      ${ tw`
-        row-start-3 row-end-7 row-span-2 min-h-[65vh]
-    ` }
-    }
-  }
-
-  main.page-accueil {
-    ${ tw`
+    ${ ({ className }) => (className === "page-accueil" && tw`
       max-h-screen overflow-y-scroll
-    ` }
+    `) }
   }
 
   footer {
@@ -62,9 +50,9 @@ const SPageContainer = styled.div`
 `
 
 const Layout = ({ slug, children }) => (
-    <SPageContainer id="page_layout">
+    <SPageContainer id="page_layout" className={`page-${ slug }`}>
       <Header siteTitle={ slug || `Title`}/>
-      <main className={`page-${ slug } snap snap-y snap-mandatory`} >
+      <main className={`snap snap-y snap-mandatory`} >
         {children}
         <Footer/>
       </main>

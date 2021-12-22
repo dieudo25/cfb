@@ -18,7 +18,8 @@ const SSection = styled.section`
                 object-cover
             ` }
             ${ ({ className }) => (className.includes("header-services") && tw`
-                object-[0% 26%]
+                object-center
+                sm:object-[0% 26%]
             `) }
         }
     }
@@ -30,7 +31,8 @@ const SSection = styled.section`
 
         h1 {
             ${tw`
-                w-10/12 m-auto text-white
+                w-10/12 m-auto text-white text-center
+                md:text-left
             ` }
         }
     }

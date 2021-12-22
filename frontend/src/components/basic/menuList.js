@@ -6,6 +6,7 @@ const SMenuList = styled.nav`
     ${ tw`
         flex-col flex-grow pb-4 text-center transition ease-in-out transition-all
         md:pb-0 md:flex md:justify-end md:flex-row
+        max-mdd:grid max-mdd:content-center
     ` }
 
     a {

@@ -20,7 +20,7 @@ const SSection = styled.section`
 
     .nav-logo {
       ${ tw`
-        p-4 flex flex-row items-center justify-between
+        py-4 flex flex-row items-center justify-between
       ` }
 
       a {

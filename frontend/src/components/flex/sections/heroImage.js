@@ -37,7 +37,7 @@ const SSection = styled.section`
 
         h1 {
             ${ tw`
-                mb-10
+                mb-8
                 md:mb-20
             ` }
         }

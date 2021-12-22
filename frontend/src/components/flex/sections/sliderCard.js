@@ -4,23 +4,31 @@ import { Link } from "gatsby";
 import Slider  from "react-slick";
 import "../../../style/slick.css";
 
+import RichTextButton from "./richTextButton";
 import Card from "../../basic/card";
+
 
 
 
 const SSection = styled.section`
     ${ tw`
-        mx-auto w-10/12 
+        mx-auto w-10/12 grid content-center items-center gap-10
     ` }
+
+    section {
+        ${ tw`
+            max-h-[20vh] 
+        ` }
+    }
 
     div.cards-slider {
         ${ tw`
-            grid grid-cols-9 grid-rows-[8fr 1fr]        
+            max-h-[80vh] grid grid-cols-9 gap-10
         ` }
 
         .slick-arrow{
             ${ tw`
-                col-span-1 w-5 h-5 m-auto overflow-hidden bg-white border-0 bg-contain text-transparent bg-no-repeat
+                col-span-1 w-5 h-5 m-auto overflow-hidden bg-white border-0 bg-contain text-transparent bg-no-repeat cursor-pointer
                 xsm:w-10 h-10
         ` }
         }
@@ -136,8 +144,21 @@ const SliderCard = ({
         style,
         settings,
         responsive_settings,
+        text,
+        first_element,
+        button,
+        animation_text,
+        animation_button 
     } 
 }) => {
+
+    let richTextButton = {
+        text: text,
+        first_element: first_element,
+        button: button,
+        animation_text: animation_text,
+        animation_button: animation_button,
+    }
 
     let responsive = responsive_settings.map((settings) => ({
         breakpoint: settings.breakpoint,
@@ -189,9 +210,10 @@ const SliderCard = ({
             id={ style && style.css_id }
             className={ `component ${strapi_component} ${style && style.css_classes }` }
         >
+            <RichTextButton data={ richTextButton } />
             <Slider { ...slideSettings }>
                 {cards.map((item) => (
-                    <Link key={`slide-${ item.id }`} to={item.page && item.page.slug != 'accueil' ? item.page.slug : '/' }>
+                    <Link key={`slide-${ item.id }`} to={item.page && item.page.slug !== 'accueil' ? item.page.slug : '/' }>
                         <Card data={ item }/>
                     </Link>
                 ))}

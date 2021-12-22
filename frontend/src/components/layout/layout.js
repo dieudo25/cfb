@@ -16,7 +16,7 @@ import "../../style/layout.css"
 
 const SPageContainer = styled.div`
   ${ tw`
-    overflow-hidden
+    
   ` }
 
   header {
@@ -27,6 +27,8 @@ const SPageContainer = styled.div`
 
   main {
     scroll-behavior: smooth;
+    scroll-padding: 50px;
+    
     ${ tw`
       row-start-2 grid overflow-x-hidden 
     ` }

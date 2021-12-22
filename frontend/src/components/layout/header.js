@@ -9,7 +9,7 @@ import Image from "../basic/image"
 
 const SSection = styled.section`
   ${ tw`
-    fixed z-10 top-0 left-0 right-0 w-full bg-white min-h-[80px] 
+    fixed z-10 top-0 left-0 right-0 w-full bg-white min-h-[80px] border-t-0 border-b-4 border-l-0 border-r-0 border-second-500 border-solid
   ` }
 
   div.nav-container{

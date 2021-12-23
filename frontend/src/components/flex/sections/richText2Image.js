@@ -78,8 +78,11 @@ const RichText2Image = ({
         first_element= { first_element }
         second_element= { second_element }
     >
+<<<<<<< HEAD
         {console.log("firselement:" , second_element    )}
         {console.log("secondelemen:", first_element)}
+=======
+>>>>>>> d5de70379611881aabe859c8a1d27984ea36aad7
         <RichText text={ text }/>
         <Image 
             image={image_1}

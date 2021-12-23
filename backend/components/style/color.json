@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_style_colors",
+  "info": {
+    "name": "color",
+    "icon": "chess-board"
+  },
+  "options": {},
+  "attributes": {
+    "normal": {
+      "type": "string"
+    },
+    "hover": {
+      "type": "string"
+    }
+  }
+}

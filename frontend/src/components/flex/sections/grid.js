@@ -10,7 +10,7 @@ const SSection = styled.section`
         w-10/12 max-w-[950px] m-auto
     ` }
 
-    .rich-text {
+    .grid-text {
         ${ tw`
             text-center mt-[100px] mb-[50px]
         ` }
@@ -20,56 +20,64 @@ const SSection = styled.section`
         ${ tw`
             grid gap-10
             sm:grid-cols-2
+        ` }
+
+        ${ ({ className }) => className.includes('services-grid') && tw`
             md:grid-cols-3
-        ` }       
+        ` }
+
         a {
             ${ tw`
                 no-underline text-dark-500
             ` }
+        }
 
-            .card-container {
-                ${ tw`
-                    w-[225px] mx-auto
-                ` } 
+        .card-container {
+            ${ ({ className }) => className.includes('services-grid') && tw`
+                w-[225px] mx-auto
+            ` }
 
-                .img-container {
+            ${ ({ className }) => className.includes('services-info') && tw`
+                grid 
+            ` }
 
-                    ${ tw`
-                        mx-auto w-[225px] h-[350px] relative z-20
-                    ` }
+            .img-container {
 
-                    &:hover {
+                ${ ({ className }) => className.includes('services-grid') && tw`
+                    mx-auto w-[225px] h-[350px] relative z-20
+                ` }
 
-                        &:after {
+                &:hover {
+
+                    &:after {
+                        ${ ({ className }) => className.includes('services-grid') && `
                             content: '';
                             background-image: url('/image/add_circle_outline_white.svg');
-
-                            ${ tw`
-                                block bg-no-repeat bg-contain w-[45px] h-[45px] absolute top-[calc(50% - calc(45px / 2))] left-[calc(50% - calc(45px / 2))] z-0 transition
-                            ` }
-                        }
-
-                        img {
-                            ${ tw`
-                                opacity-40 transition
-                            ` }
-                        }
-
+                        ` }
+                        
+                        ${ ({ className }) => className.includes('services-grid') && tw`
+                            block bg-no-repeat bg-contain w-[45px] h-[45px] absolute top-[calc(50% - calc(45px / 2))] left-[calc(50% - calc(45px / 2))] z-0 transition
+                        ` }
                     }
 
                     img {
-                        ${ tw`
-                            w-full h-full object-cover z-10 transition
-                            
+                        ${ ({ className }) => className.includes('services-grid') && tw`
+                            opacity-40 transition
                         ` }
                     }
                 }
 
-                p {
-                    ${ tw`
-                        mx-auto w-[215px] text-center
+                img {
+                    ${ ({ className }) => className.includes('services-grid') && tw`
+                        w-full h-full object-cover z-10 transition
                     ` }
                 }
+            }
+
+            p {
+                ${ ({ className }) => className.includes('services-grid') && tw`
+                    mx-auto w-[215px] text-center
+                ` }
             }
         }
     }
@@ -81,12 +89,15 @@ const Grid = ( { data: { strapi_component, text, cards, style } }) => (
         id={ style && style.css_id }
         className={ `component ${strapi_component} ${style && style.css_classes }` }
     >
-        <RichText text={ text } />
+        <RichText className="grid-text" text={ text } />
         <div className="cards-grid">
-            { cards.map((item) => (
+            { cards.map((item) => ( item.page
+                ?
                 <Link key={`card-${ item.id }`} to={item.page && item.page.slug !== 'accueil' ? `/${item.page.slug}` : '/' }>
                     <Card data={ item }/>
                 </Link>
+                :
+                <Card key={`card-${ item.id }`} data={ item }/>
             ))
             }
         </div>

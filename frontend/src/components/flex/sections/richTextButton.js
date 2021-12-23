@@ -7,7 +7,7 @@ import Button from "../../basic/button";
 const SSection = styled.section`
     ${ tw`
         container mx-auto w-full grid grid-cols-1 grid-rows-2 items-center
-        md:grid-rows-1 md:grid-cols-3 md:gap-5 w-10/12
+        md:grid-rows-1 md:grid-cols-3 md:gap-5 md:w-10/12
        
     ` }
 

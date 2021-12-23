@@ -17,19 +17,20 @@ const SSection = styled.section`
 
     section {
         ${ tw`
-            max-h-[20vh] 
+            md:max-h-[20vh] 
         ` }
     }
 
     div.cards-slider {
         ${ tw`
-            max-h-[80vh] grid grid-cols-9 gap-10
+            grid grid-cols-[30px 1fr 30px]
+            md:max-h-[80vh] md:gap-10
         ` }
 
         .slick-arrow{
             ${ tw`
-                col-span-1 w-5 h-5 m-auto overflow-hidden bg-white border-0 bg-contain text-transparent bg-no-repeat cursor-pointer
-                xsm:w-10 h-10
+                col-span-1 w-5 h-5 m-auto p-0 overflow-hidden bg-white border-0 bg-contain text-transparent bg-no-repeat cursor-pointer
+                sm:w-10 sm:h-10
         ` }
         }
 
@@ -52,7 +53,7 @@ const SSection = styled.section`
 
         .slick-list {
             ${ tw`
-                col-span-7
+
             ` }
 
             a {
@@ -109,7 +110,7 @@ const SSection = styled.section`
 
         ul.slick-dots {
             ${ tw`
-                m-auto p-0 w-full col-span-10 text-center
+                m-auto p-0 w-full text-center col-span-3
             ` }
 
             li {

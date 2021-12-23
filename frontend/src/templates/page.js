@@ -3,7 +3,7 @@ import React from 'react'
 import Page from "../components/page"
 import Seo from "../components/seo"
 
-const PageTemplate = ({pageContext: { id, title, slug, content }}) => (
+const PageTemplate = ({pageContext: { id, title, slug, content, color }}) => (
     <React.StrictMode>  
         <Seo title="Accueil" />   
         <Page
@@ -11,6 +11,7 @@ const PageTemplate = ({pageContext: { id, title, slug, content }}) => (
             slug={ slug }
             title={ title }
             content={ content }
+            color={ color }
         />
     </React.StrictMode>
 )

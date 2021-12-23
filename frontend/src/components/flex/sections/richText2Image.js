@@ -28,8 +28,6 @@ const RichText2Image = ({
         first_element= { first_element }
         second_element= { second_element }
     >
-        {console.log("image1", image_1)}
-        {console.log("image2", image_2)}
         <RichText text={ text }/>
         <Image 
             image={image_1}

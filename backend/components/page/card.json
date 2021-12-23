@@ -17,15 +17,14 @@
       "required": true,
       "pluginOptions": {}
     },
-    "text": {
-      "type": "string",
-      "required": true
-    },
     "color": {
       "type": "string"
     },
     "page": {
       "model": "page"
+    },
+    "text": {
+      "type": "richtext"
     }
   }
 }

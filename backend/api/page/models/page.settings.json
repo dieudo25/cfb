@@ -32,6 +32,11 @@
         "page.paragraph",
         "page.rich-text2-image"
       ]
+    },
+    "color": {
+      "type": "component",
+      "repeatable": false,
+      "component": "style.color"
     }
   }
 }

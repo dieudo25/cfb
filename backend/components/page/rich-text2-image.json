@@ -55,6 +55,16 @@
       "type": "component",
       "repeatable": false,
       "component": "page.style"
+    },
+    "animation_image_1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "animation.animation"
+    },
+    "animation_image_2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "animation.animation"
     }
   }
 }

@@ -28,6 +28,7 @@ const SSection = styled.section`
             ? 
             tw`
                 sm:col-start-1 sm:text-left 
+                lg:col-end-2
             ` 
             :  
             tw`

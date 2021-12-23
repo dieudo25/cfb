@@ -9,27 +9,30 @@ const SSection = styled.section`
     ${ tw` 
         mx-auto w-10/12  grid grid-rows-2 items-center gap-8 
         sm:grid-cols-2 sm:grid-rows-1 
-        md:grid-cols-3
+        lg:grid-cols-3
         xl:w-[1100px]
+    ` }
+
+    ${ ({ className }) => className.includes('life-project') && tw`
+        grid-rows-[2fr 1fr] gap-0
+        md:grid-cols-2
     ` }
 
     div.c2a {
         ${ tw`
             row-span-1
-            sm:col-start-2 sm:row-start-1 sm:text-right
+            sm:row-start-1 sm:text-right
         `}
 
         ${ ({ first_element }) => first_element === 'text' 
             ? 
             tw`
-                sm:col-start-1 sm:text-left
+                sm:col-start-1 sm:text-left 
             ` 
             :  
             tw`
                 sm:col-start-2 sm:text-right
-                md:col-start-3
             ` 
-            
         }
 
         div.rich-text {
@@ -61,8 +64,8 @@ const SSection = styled.section`
         ${ tw`
             row-span-1 w-full
             sm:row-start-1
-            md:col-span-2 
-            lg:h-[455px]
+            md:h-[200px]
+            lg:col-span-2 lg:h-[455px]
         ` }
 
         ${ ({ first_element }) => first_element === 'image' 
@@ -72,7 +75,9 @@ const SSection = styled.section`
             tw`sm:col-start-2` 
         }
 
-        
+        ${ ({ className }) => className.includes('life-project') && tw`
+            mx-auto w-[200px]
+        ` }
 
         img {
             ${ tw`
@@ -80,11 +85,11 @@ const SSection = styled.section`
             ` }
 
             ${ ({ className }) => className.includes('home-section') && tw`
-                md:object-cover
+                lg:object-cover
             ` }
             
             ${ ({ className }) => className.includes('life-project') && tw`
-                w-[250px] h-full
+                w-full h-full
             ` }
         }
     }

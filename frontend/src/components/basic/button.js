@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 const SButton = styled(Link)`
     ${ tw`
-        text-white font-bold p-5 no-underline transition ease-in-out duration-500
+        inline-grid text-white text-center font-bold p-5 no-underline transition ease-in-out duration-500
         sm:py-3 sm:px-8
         hover:transition ease-in-out
     `}

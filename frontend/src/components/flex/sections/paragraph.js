@@ -11,7 +11,7 @@ const SSection = styled.section`
     .rich-text {
         h1 {
             ${ ({ className }) => className.includes('p-services') && tw`
-                my-0
+                my-0 mx-auto max-w-[900px] text-left
             ` }
         }
     }

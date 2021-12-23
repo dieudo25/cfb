@@ -12,7 +12,7 @@ const SSection = styled.section`
 
     .grid-text {
         ${ tw`
-            text-center mt-[100px] mb-[50px]
+            text-center mb-[50px]
         ` }
     }
  
@@ -23,7 +23,7 @@ const SSection = styled.section`
         ` }
 
         ${ ({ className }) => className.includes('services-grid') && tw`
-            md:grid-cols-3
+            lg:grid-cols-3
         ` }
 
         a {

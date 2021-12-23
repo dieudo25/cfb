@@ -42,9 +42,12 @@ const SPageContainer = styled.div`
     `) }
 
     > section, footer {
-      ${ tw`
-        mt-[80px]
-      ` }
+
+      &:not(:first-child) {
+        ${ tw`
+          mt-[80px]
+        ` }
+      }
     }
   }
 

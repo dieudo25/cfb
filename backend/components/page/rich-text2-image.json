@@ -50,6 +50,11 @@
       ],
       "unique": true,
       "default": "image_1"
+    },
+    "style": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.style"
     }
   }
 }

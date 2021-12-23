@@ -5,13 +5,13 @@ import RichText from "../../basic/richText";
 
 const SSection = styled.section`
     ${ tw`
-        w-10/12 mx-auto
+        mx-auto w-10/12
     ` }
 
     .rich-text {
         h1 {
             ${ ({ className }) => className.includes('p-services') && tw`
-                my-0 mx-auto max-w-[900px] text-left
+                my-0 mx-auto text-left
             ` }
         }
     }

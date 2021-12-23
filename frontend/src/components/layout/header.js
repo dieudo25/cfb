@@ -14,7 +14,7 @@ const SSection = styled.section`
 
   div.nav-container{
     ${ tw`
-      flex flex-col w-10/12 mx-auto 
+      flex flex-col w-10/12 max-w-[960px]  mx-auto 
       md:items-center md:justify-between md:flex-row
     ` }
 

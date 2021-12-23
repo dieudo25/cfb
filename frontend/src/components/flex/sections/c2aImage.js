@@ -10,7 +10,6 @@ const SSection = styled.section`
         mx-auto w-10/12  grid grid-rows-2 items-center gap-8 
         sm:grid-cols-2 sm:grid-rows-1 
         lg:grid-cols-3
-        xl:w-[1100px]
     ` }
 
     ${ ({ className }) => className.includes('life-project') && tw`
@@ -27,13 +26,14 @@ const SSection = styled.section`
         ${ ({ first_element }) => first_element === 'text' 
             ? 
             tw`
-                sm:col-start-1 sm:text-left 
-                lg:col-end-2
+                sm:col-start-1 sm:text-left
             ` 
             :  
             tw`
                 sm:col-start-2 sm:text-right
+                lg:col-start-3
             ` 
+            
         }
 
         div.rich-text {
@@ -65,7 +65,6 @@ const SSection = styled.section`
         ${ tw`
             row-span-1 w-full
             sm:row-start-1
-            md:h-[200px]
             lg:col-span-2 lg:h-[455px]
         ` }
 

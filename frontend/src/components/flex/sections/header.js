@@ -31,7 +31,7 @@ const SSection = styled.section`
 
         h1 {
             ${tw`
-                w-10/12 m-auto text-white text-center
+                w-10/12 max-w-[960px] m-auto text-white text-center capitalize
                 md:text-left
             ` }
         }

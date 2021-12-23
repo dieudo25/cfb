@@ -7,8 +7,8 @@ import Image from "../../basic/image";
 
 const SSection = styled.section`
     ${ tw` 
-        mx-auto w-10/12  grid grid-rows-2 items-center 
-        sm:grid-cols-2 sm:grid-rows-1 sm:gap-8  
+        mx-auto w-10/12  grid grid-rows-2 items-center gap-8 
+        sm:grid-cols-2 sm:grid-rows-1 
         md:grid-cols-3
         xl:w-[1100px]
     ` }

@@ -10,7 +10,7 @@ const SSection = styled.section`
         w-10/12 max-w-[950px] m-auto
     ` }
 
-    .rich-text {
+    .grid-text {
         ${ tw`
             text-center mt-[100px] mb-[50px]
         ` }
@@ -89,7 +89,7 @@ const Grid = ( { data: { strapi_component, text, cards, style } }) => (
         id={ style && style.css_id }
         className={ `component ${strapi_component} ${style && style.css_classes }` }
     >
-        <RichText text={ text } />
+        <RichText className="grid-text" text={ text } />
         <div className="cards-grid">
             { cards.map((item) => ( item.page
                 ?

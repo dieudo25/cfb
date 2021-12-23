@@ -5,8 +5,16 @@ import RichText from "../../basic/richText";
 
 const SSection = styled.section`
     ${ tw`
-        w-10/12 mx-auto mt-[100px] mb-[50px]
+        w-10/12 mx-auto
     ` }
+
+    .rich-text {
+        h1 {
+            ${ ({ className }) => className.includes('p-services') && tw`
+                my-0
+            ` }
+        }
+    }
    
 `
 

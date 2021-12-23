@@ -40,6 +40,12 @@ const SPageContainer = styled.div`
     ${ ({ className }) => (className === "page-accueil" && tw`
       max-h-screen overflow-y-scroll
     `) }
+
+    > section, footer {
+      ${ tw`
+        mt-[80px]
+      ` }
+    }
   }
 
   footer {

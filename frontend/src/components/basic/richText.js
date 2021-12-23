@@ -5,10 +5,10 @@ import remarkGfm from "remark-gfm";
 const RichText = ({ text, dataSal, dataSalDuration }) => (
     <div 
         className="rich-text"
-        data-sal={dataSal}
-        data-sal-duration={dataSalDuration}
+        data-sal={ dataSal }
+        data-sal-duration={ dataSalDuration }
     >
-        <ReactMarkdown children={text} remarkPlugins={[remarkGfm]} />
+        <ReactMarkdown children={ text } remarkPlugins={ [remarkGfm] } />
     </div>
 )
 

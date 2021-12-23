@@ -40,7 +40,7 @@ const SSection = styled.section`
           background-image: url('/image/menu_icon.svg');
 
           ${ tw`
-            bg-white bg-contain bg-no-repeat w-10 h-10 border-0
+            bg-white bg-contain bg-no-repeat w-10 h-10 border-0 cursor-pointer
             md:hidden
             focus:outline-none
         ` }

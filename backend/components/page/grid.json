@@ -2,18 +2,24 @@
   "collectionName": "components_page_grids",
   "info": {
     "name": "grid",
-    "icon": "table"
+    "icon": "table",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "text": {
       "type": "richtext"
     },
-    "card": {
+    "cards": {
       "type": "component",
       "repeatable": true,
       "component": "page.card",
       "required": true
+    },
+    "style": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.style"
     }
   }
 }

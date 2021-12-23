@@ -70,11 +70,15 @@ const RichTextButton = ({ data: { strapi_component, text, button, first_element,
             dataSalDuration="800"
             text={ text }
         />
-        <Button 
-            button={ button }
-            dataSal={ animation_button && animation_button.type.replace('_', '-') }
-            dataSalDuration="800"
-        />
+
+        { button && 
+            <Button 
+                button={ button }
+                dataSal={ animation_button && animation_button.type.replace('_', '-') }
+                dataSalDuration="800"
+            />
+        }
+        
     </SSection>
 )
 

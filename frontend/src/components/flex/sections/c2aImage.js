@@ -72,17 +72,22 @@ const Section = styled.section`
             tw`sm:col-start-2` 
         }
 
+        
+
         img {
             ${ tw`
                 w-full h-full object-contain
+            ` }
+
+            ${ ({ className }) => className.includes('home-section') && tw`
                 md:object-cover
+            ` }
+            ${ ({ className }) => className.includes('life-project') && tw`
+                w-[250px] h-full
             ` }
         }
     }
 `
-
-
-
 
 const C2AImage = ({ data: { strapi_component, text, button, image, style, first_element, animation } }) => (
     <Section
@@ -92,12 +97,12 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style, first_
     >   
         <div className="c2a">
             <RichText text={ text }/>
-            <Button button={ button }/>
+            { button && <Button button={ button }/> }
         </div>
         <Image
             dataSal={ animation && animation.type.replace('_', '-') }
             dataSalDuration="800"
-            image={ image.formats.medium }
+            image={ image.formats.medium || image.formats.thumbnail }
         />
 
     </Section>

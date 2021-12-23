@@ -213,7 +213,7 @@ const SliderCard = ({
             <RichTextButton data={ richTextButton } />
             <Slider { ...slideSettings }>
                 {cards.map((item) => (
-                    <Link key={`slide-${ item.id }`} to={item.page && item.page.slug !== 'accueil' ? item.page.slug : '/' }>
+                    <Link key={`card-${ item.id }`} to={item.page && item.page.slug !== 'accueil' ? item.page.slug : '/' }>
                         <Card data={ item }/>
                     </Link>
                 ))}

@@ -28,7 +28,8 @@
         "page.richtext-button",
         "page.slider",
         "page.header",
-        "page.grid"
+        "page.grid",
+        "page.paragraph"
       ]
     }
   }

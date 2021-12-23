@@ -10,12 +10,12 @@ const SSection = styled.section`
 
     .img-container {
         ${ tw`
-            h-[400px]
+            h-[400px] bg-dark-500
         ` } 
 
         img {
             ${ tw`
-                object-cover
+                object-cover opacity-60
             ` }
             ${ ({ className }) => (className.includes("header-services") && tw`
                 object-center

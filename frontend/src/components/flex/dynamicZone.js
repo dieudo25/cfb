@@ -5,6 +5,8 @@ import C2AImage from './sections/c2aImage';
 import RichTextButton from './sections/richTextButton';
 import SliderCard from './../flex/sections/sliderCard';
 import Header from './sections/header';
+import Grid from './sections/grid';
+import Paragraph from './sections/paragraph';
 
 const DynamicZone = ({ sections }) => (
     <>
@@ -21,6 +23,10 @@ const DynamicZone = ({ sections }) => (
               return <SliderCard key={ `${component.strapi_component}_${component.id}` } data={component}/>
             case 'page.header':
               return <Header key={ `${component.strapi_component}_${component.id}` } data={component}/>
+            case 'page.grid':
+              return <Grid key={ `${component.strapi_component}_${component.id}` } data={component}/>
+            case 'page.paragraph':
+              return <Paragraph key={ `${component.strapi_component}_${component.id}` } data={component}/>
             default:
               return <h2 key={Math.random()}>Default case - component not found</h2>
           }

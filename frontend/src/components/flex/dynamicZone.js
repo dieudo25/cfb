@@ -7,6 +7,7 @@ import SliderCard from './../flex/sections/sliderCard';
 import Header from './sections/header';
 import Grid from './sections/grid';
 import Paragraph from './sections/paragraph';
+import RichText2Image from './sections/richText2Image';
 
 const DynamicZone = ({ sections }) => (
     <>
@@ -27,6 +28,8 @@ const DynamicZone = ({ sections }) => (
               return <Grid key={ `${component.strapi_component}_${component.id}` } data={component}/>
             case 'page.paragraph':
               return <Paragraph key={ `${component.strapi_component}_${component.id}` } data={component}/>
+            case 'page.rich-text2-image':
+              return <RichText2Image key={ `${component.strapi_component}_${component.id}` } data={component}/>
             default:
               return <h2 key={Math.random()}>Default case - component not found</h2>
           }

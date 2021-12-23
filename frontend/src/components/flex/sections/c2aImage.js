@@ -5,7 +5,7 @@ import Button from "../../basic/button";
 import RichText from "../../basic/richText";
 import Image from "../../basic/image";
 
-const Section = styled.section`
+const SSection = styled.section`
     ${ tw` 
         container mx-auto w-10/12 min-h-[calc(100vh - 80px)] grid grid-rows-2 items-center 
         sm:grid-cols-2 sm:grid-rows-1 sm:gap-8  
@@ -90,7 +90,7 @@ const Section = styled.section`
 `
 
 const C2AImage = ({ data: { strapi_component, text, button, image, style, first_element, animation } }) => (
-    <Section
+    <SSection
         id={ style && style.css_id }
         className={ `component ${strapi_component} ${style && style.css_classes }` }
         first_element={ first_element }
@@ -105,7 +105,7 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style, first_
             image={ image.formats.medium || image.formats.thumbnail }
         />
 
-    </Section>
+    </SSection>
 )
 
 export default C2AImage;

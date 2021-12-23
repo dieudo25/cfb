@@ -22,7 +22,7 @@
       "pluginOptions": {}
     },
     "image_2": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images"

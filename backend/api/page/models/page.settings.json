@@ -29,7 +29,8 @@
         "page.slider",
         "page.header",
         "page.grid",
-        "page.paragraph"
+        "page.paragraph",
+        "page.rich-text2-image"
       ]
     }
   }

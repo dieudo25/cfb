@@ -12,7 +12,7 @@ const SSection = styled.section`
         lg:grid-cols-3
     ` }
 
-    ${ ({ className }) => className.includes('life-project') && tw`
+    ${ ({ className }) => className.includes('service-section') && tw`
         grid-rows-[2fr 1fr] gap-0 mt-0
         md:grid-cols-2
     ` }
@@ -38,9 +38,13 @@ const SSection = styled.section`
 
         div.rich-text {
             ${tw`
-                mb-10
-                sm:mb-10
+                
             `}
+
+            ${ ({ button }) => button && tw`
+                mb-5
+                sm:mb-10
+            ` }
 
             p {
                 ${ tw`
@@ -65,7 +69,6 @@ const SSection = styled.section`
         ${ tw`
             row-span-1 w-full
             sm:row-start-1
-            lg:col-span-2 lg:h-[455px]
         ` }
 
         ${ ({ first_element }) => first_element === 'image' 
@@ -75,7 +78,11 @@ const SSection = styled.section`
             tw`sm:col-start-2` 
         }
 
-        ${ ({ className }) => className.includes('life-project') && tw`
+        ${ ({ className }) => className.includes('home-section') && tw`
+            lg:col-span-2 lg:h-[455px]
+        ` }
+
+        ${ ({ className }) => className.includes('service-section') && tw`
             mx-auto w-[200px]
         ` }
 
@@ -88,7 +95,7 @@ const SSection = styled.section`
                 lg:object-cover
             ` }
             
-            ${ ({ className }) => className.includes('life-project') && tw`
+            ${ ({ className }) => className.includes('service-section') && tw`
                 w-full h-full
             ` }
         }
@@ -100,6 +107,7 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style, first_
         id={ style && style.css_id }
         className={ `component ${strapi_component} ${style && style.css_classes }` }
         first_element={ first_element }
+        button={ button }
     >   
         <div className="c2a">
             <RichText text={ text }/>

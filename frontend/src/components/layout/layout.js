@@ -59,6 +59,12 @@ const SPageContainer = styled.div`
           }
       }
     }
+
+    section.service-section {
+      ${ tw`
+        mt-0
+      ` }
+    }
   }
 
   footer {

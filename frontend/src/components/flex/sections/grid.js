@@ -12,7 +12,11 @@ const SSection = styled.section`
 
     .grid-text {
         ${ tw`
-            text-center mb-[50px]
+            text-center
+        ` }
+
+        ${ ({ className }) => className.includes('services-grid') && tw`
+            mb-[50px]
         ` }
     }
  
@@ -38,13 +42,17 @@ const SSection = styled.section`
             ` }
 
             ${ ({ className }) => className.includes('services-info') && tw`
-                grid 
+                grid grid-cols-[1fr 3fr] items-center
             ` }
 
             .img-container {
 
                 ${ ({ className }) => className.includes('services-grid') && tw`
                     mx-auto w-[225px] h-[350px] relative z-20
+                ` }
+
+                ${ ({ className }) => className.includes('services-info') && tw`
+                    w-12 h-12
                 ` }
 
                 &:hover {
@@ -74,10 +82,12 @@ const SSection = styled.section`
                 }
             }
 
-            p {
-                ${ ({ className }) => className.includes('services-grid') && tw`
-                    mx-auto w-[215px] text-center
-                ` }
+            .rich-text {
+                p {
+                    ${ ({ className }) => className.includes('services-grid') && tw`
+                        mx-auto w-[215px] text-center
+                    ` }
+                }   
             }
         }
     }

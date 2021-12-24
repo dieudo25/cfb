@@ -30,6 +30,10 @@ const SSection = styled.section`
             lg:grid-cols-3
         ` }
 
+        ${ ({ className }) => className.includes('services-info') && `
+           word-break: break-word;
+        ` }
+
         a {
             ${ tw`
                 no-underline text-dark-500
@@ -42,7 +46,8 @@ const SSection = styled.section`
             ` }
 
             ${ ({ className }) => className.includes('services-info') && tw`
-                grid grid-cols-[1fr 3fr] items-center
+                grid grid-cols-[1fr 3fr] gap-2 items-center
+                lg:grid-cols-[50px 1fr] gap-5 mt-5
             ` }
 
             .img-container {
@@ -104,7 +109,7 @@ const Grid = ( { data: { strapi_component, text, cards, style } }) => (
             { cards.map((item) => ( item.page
                 ?
                 <Link key={`card-${ item.id }`} to={item.page && item.page.slug !== 'accueil' ? `/${item.page.slug}` : '/' }>
-                    <Card data={ item }/>
+                    <Card data={ item } className={ style.css_classes }/>
                 </Link>
                 :
                 <Card key={`card-${ item.id }`} data={ item }/>

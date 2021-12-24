@@ -28,7 +28,7 @@
     "style": {
       "type": "component",
       "repeatable": false,
-      "component": "page.style"
+      "component": "style.style"
     },
     "first_element": {
       "type": "enumeration",

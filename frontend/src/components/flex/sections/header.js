@@ -17,7 +17,13 @@ const SSection = styled.section`
             ${ tw`
                 object-cover opacity-60
             ` }
+
             ${ ({ className }) => (className.includes("header-services") && tw`
+                object-center
+                sm:object-[0% 26%]
+            `) }
+
+            ${ ({ className }) => (className.includes("header-service-life-project") && tw`
                 object-center
                 sm:object-[0% 26%]
             `) }

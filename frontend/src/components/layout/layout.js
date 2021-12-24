@@ -37,9 +37,9 @@ const SPageContainer = styled.div`
       row-start-2 grid overflow-x-hidden
     ` }
 
-    ${ ({ className }) => (className === "page-accueil" && tw`
+    ${ ({ className }) => className === "page-accueil" && tw`
       max-h-screen overflow-y-scroll
-    `) }
+    ` }
 
     > section, footer {
 

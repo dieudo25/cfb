@@ -22,7 +22,7 @@
     "style": {
       "type": "component",
       "repeatable": false,
-      "component": "page.style"
+      "component": "style.style"
     }
   }
 }

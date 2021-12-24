@@ -9,21 +9,26 @@ const SSection = styled.section`
     ` }
 
     .rich-text {
-        h1 {
+        h2 {
             ${ ({ className }) => className.includes('p-services') && tw`
-                my-0 mx-auto text-left
+                mt-0 mx-auto text-left
+            ` }
+
+            ${ ({ color }) => color && `
+                color: ${ color.normal };
             ` }
         }
     }
    
 `
 
-const Paragraph = ({ data: { strapi_component, text, style }, color }) => (
+const Paragraph = ({ data: { strapi_component, text, color, style } }) => (
     <SSection
         id={ style && style.css_id }
         className={ `component ${strapi_component} ${style && style.css_classes }` }
         color={ color }
     >
+        {console.log(color)}
         <RichText text={ text } />
     </SSection>
 )

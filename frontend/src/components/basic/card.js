@@ -5,24 +5,40 @@ import Image from "./image";
 import RichText from "./richText";
 
 const SCard = styled.div`
-    .img-container {
-        ${ ({color}) => color 
-            ? `background-color: ${ color };`
-            :
-            tw`bg-white`    
+    &:hover {
+        .img-container {
+            ${ ({ className, color })  => (className.includes("services-grid") || className.includes("home-section")) && color
+                    ? `background-color: ${ color };`
+                    :
+                    tw`bg-white`    
+            }
+        }
+
+        .rich-text {
+            p {
+                ${ ({ className, color })  => (className.includes("services-grid") || className.includes("home-section")) && color &&
+                    `color: ${ color };`  
+                }
+            }
         }
     }
 
-    &:hover {
+    .rich-text {
         p {
-            ${ ({color}) => color && `color: ${ color };` }
+            a {
+                ${ ({ color })  => color &&
+                    `color: ${ color };`  
+                }
+            }
         }
     }
+
+
     
 `
 
-const Card = ({ data: { color, image, text } } ) => (
-    <SCard className="card-container" color={ color }>
+const Card = ({ data: { color, image, text }, className } ) => (
+    <SCard className={`card-container ${ className }`} color={ color }>
         <Image 
             image={ image.formats
                 ? 

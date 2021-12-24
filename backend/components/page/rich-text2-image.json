@@ -54,7 +54,7 @@
     "style": {
       "type": "component",
       "repeatable": false,
-      "component": "page.style"
+      "component": "style.style"
     },
     "animation_image_1": {
       "type": "component",

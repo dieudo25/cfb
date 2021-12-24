@@ -63,7 +63,7 @@ const SSection = styled.section`
 
                 .card-container {
                     ${ tw`
-                        w-[225px] mx-auto
+                        w-[225px] mx-auto max-h-[400px]
                     ` } 
     
                     .img-container {
@@ -215,7 +215,7 @@ const SliderCard = ({
             <Slider { ...slideSettings }>
                 {cards.map((item) => (
                     <Link key={`card-${ item.id }`} to={item.page && item.page.slug !== 'accueil' ? item.page.slug : '/' }>
-                        <Card data={ item }/>
+                        <Card data={ item } className={ style.css_classes } />
                     </Link>
                 ))}
             </Slider>

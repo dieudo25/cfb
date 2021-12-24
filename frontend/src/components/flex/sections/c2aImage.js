@@ -13,7 +13,7 @@ const SSection = styled.section`
     ` }
 
     ${ ({ className }) => className.includes('life-project') && tw`
-        grid-rows-[2fr 1fr] gap-0
+        grid-rows-[2fr 1fr] gap-0 mt-0
         md:grid-cols-2
     ` }
 

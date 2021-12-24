@@ -67,8 +67,9 @@ const SSection = styled.section`
 
     div.img-container {
         ${ tw`
-            row-span-1 w-full
+            row-span-1 w-full 
             sm:row-start-1
+            lg:col-span-2
         ` }
 
         ${ ({ first_element }) => first_element === 'image' 
@@ -79,7 +80,7 @@ const SSection = styled.section`
         }
 
         ${ ({ className }) => className.includes('home-section') && tw`
-            lg:col-span-2 lg:h-[455px]
+            lg:h-[455px]
         ` }
 
         ${ ({ className }) => className.includes('service-section') && tw`

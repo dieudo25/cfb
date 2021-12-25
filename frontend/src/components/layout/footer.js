@@ -14,7 +14,7 @@ const SFooter = styled.footer`
 
     .footer-container {
         ${ tw`
-            mx-auto my-10 w-10/12 grid gap-10 justify-center
+            mx-auto my-10 w-10/12 max-w-[960px] grid gap-10 justify-center
             lg:grid-cols-3
             xl:grid-cols-3
 

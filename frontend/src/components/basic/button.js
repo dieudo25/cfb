@@ -22,14 +22,14 @@ const SButton = styled(Link)`
     }
 `
 
-const Button = ({ button: { text, color, color_hover }, dataSal, dataSalDuration}) => (
+const Button = ({ button: { text, color, color_hover, page }, dataSal, dataSalDuration}) => (
     <div 
         className="btn-container"
         data-sal={dataSal}
         data-sal-duration={dataSalDuration}
     >
         {<SButton
-            to={'/'} 
+            to={page && page.slug !== 'accueil' ? `/${page.slug}` : '/' } 
             className="btn"
             color={ color }
             color_hover={ color_hover }

@@ -6,7 +6,7 @@ import Image from "../../basic/image";
 
 const SSection = styled.section`
     ${ tw`
-        grid w-10/12 mx-auto my-[100px] gap-5 mb-0
+        grid w-10/12 mx-auto gap-5 mb-0
         sm:grid-cols-2 sm:grid-rows-[1fr 2fr]
         lg:grid-cols-[1fr 2fr 1fr] lg:grid-rows-1 lg:items-center   
     `}

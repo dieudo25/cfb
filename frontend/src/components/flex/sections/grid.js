@@ -47,7 +47,7 @@ const SSection = styled.section`
 
             ${ ({ className }) => className.includes('services-info') && tw`
                 grid grid-cols-[1fr 3fr] gap-2 items-center
-                lg:grid-cols-[50px 1fr] gap-5 mt-5
+                lg:grid-cols-[50px 1fr] lg:gap-5
             ` }
 
             .img-container {

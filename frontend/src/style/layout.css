@@ -60,6 +60,11 @@ img {
   height: 100%;
 }
 
+em {
+  color:#0764A1;
+  font-style: normal;
+}
+
 @media (min-width: 768px) {
   .home-section {
     height: 100vh;

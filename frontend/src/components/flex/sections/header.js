@@ -2,15 +2,19 @@ import React from "react";
 import tw, { styled } from "twin.macro"
 
 import Image from "../../basic/image";
+import capitalizeFirstChar from "../../../utils/string";
 
 const SSection = styled.section`
     ${ tw`
-        relative h-[400px]   
+        relative h-[250px]
+        sm:h-[300px]
+        md:h-[400px]
+
     ` }
 
     .img-container {
         ${ tw`
-            h-[400px] bg-dark-500
+            h-full bg-dark-500
         ` } 
 
         img {
@@ -37,7 +41,7 @@ const SSection = styled.section`
 
         h1 {
             ${tw`
-                w-10/12 max-w-[960px] m-auto text-white text-center capitalize
+                w-10/12 max-w-[960px] m-auto text-white text-center
                 md:text-left
             ` }
         }
@@ -51,7 +55,7 @@ const Header = ({ data: { strapi_component, text, image, style } }) => (
     >
         <Image image={ image } />
         <div className="header-text">
-            <h1>{ text }</h1>
+            <h1>{ capitalizeFirstChar(text) }</h1>
         </div>
     </SSection>
 )

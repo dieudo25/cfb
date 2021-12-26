@@ -6,10 +6,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "../basic/image"
 import RichText from "../basic/richText" 
 import MenuList from "../basic/menuList"
+import Card from "../basic/card"
 
 const SFooter = styled.footer`
     ${ tw`
-        mt-[100px] border-solid border-t-4 border-l-0 border-r-0 border-b-0 border-second-500
+        border-solid border-t-4 border-l-0 border-r-0 border-b-0 border-second-500
     ` }
 
     .footer-container {
@@ -70,12 +71,18 @@ const SFooter = styled.footer`
                     ` }
                 }
 
-                .card-text {
+                .rich-text {
                     p {
                         ${ tw`
                             text-center break-words
                             lg:text-left lg:break-all
                         ` }
+
+                        a {
+                            ${ ({ color })  => color &&
+                                `color: ${ color };`  
+                            }
+                        }
                     }
                 }
             }
@@ -117,13 +124,11 @@ const Footer = () => {
                     copyright
                     card {
                         id
+                        color
                         image {
-                        formats {
-                            thumbnail {
+                            id
                             url
-                            }
-                        }
-                        alternativeText
+                            alternativeText
                         }
                         text
                     }
@@ -133,7 +138,7 @@ const Footer = () => {
     )
 
     return (
-        <SFooter className="snap-start">
+        <SFooter id="footer" className="snap-start">
             <div className="footer-container">
                 <div className="footer-logo">
                     <Link to='/'>
@@ -143,14 +148,7 @@ const Footer = () => {
                 </div>
                 <MenuList menu={ menu } isMenuActive={ true }  />
                 <div className="footer-cards">
-                    { card.map((item) => (
-                        <div key={`card-${item.id}`} className="card-container">
-                            <Image image={ item.image.formats.thumbnail } />
-                            <div className="card-text">
-                                <p>{ item.text }</p>
-                            </div>
-                        </div>
-                    )) }
+                    { card.map((item) => <Card data={ item } />) }
                 </div>
             </div>
             <div className="footer-copyright"><p>{ copyright }</p></div>

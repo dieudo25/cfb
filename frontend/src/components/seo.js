@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+import capitalizeFirstChar from "../utils/string"
+
 function Seo({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
@@ -33,7 +35,7 @@ function Seo({ description, lang, meta, title }) {
         lang,
         class: "scroll-smooth"
       }}
-      title={title}
+      title={ capitalizeFirstChar(title) }
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {

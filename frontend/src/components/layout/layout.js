@@ -34,8 +34,12 @@ const SPageContainer = styled.div`
     scroll-padding: 50px;
     
     ${ tw`
-      row-start-2 grid overflow-x-hidden
+      row-start-2 grid gap-[100px] overflow-x-hidden 
     ` }
+
+    ${ ({ className }) => (className === "page-a-propos" && tw`
+      lg:gap-[150px]
+    `) }
 
     ${ ({ className }) => className === "page-accueil" && tw`
       max-h-screen overflow-y-scroll
@@ -49,7 +53,7 @@ const SPageContainer = styled.div`
 
       &:not(:first-child) {
         ${ tw`
-          mt-[80px]
+         
         ` }
 
           &:not(:last-child) {
@@ -60,17 +64,17 @@ const SPageContainer = styled.div`
       }
     }
 
-    section.service-section {
+    section.service-section.service-how {
       ${ tw`
         mt-0
       ` }
     }
-  }
 
-  footer {
-    ${ tw`
-
-    ` }
+    #footer {
+      ${ tw`
+        /* mt-[200px] */
+      ` }
+    }
   }
 `
 

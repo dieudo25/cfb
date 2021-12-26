@@ -11,6 +11,7 @@ const Image = ({ image: { url, alternativeText }, dataSal, dataSalDuration, clas
         <img
             src={ generateStrapiUrl(url) }
             alt={ alternativeText }
+            draggable="false"
         />
     </div>
 )

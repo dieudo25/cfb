@@ -15,6 +15,9 @@
     },
     "color_hover": {
       "type": "string"
+    },
+    "page": {
+      "model": "page"
     }
   }
 }

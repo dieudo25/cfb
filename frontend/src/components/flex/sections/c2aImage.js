@@ -84,7 +84,7 @@ const SSection = styled.section`
         ` }
 
         ${ ({ className }) => className.includes('service-section') && tw`
-            mx-auto w-[200px]
+            mx-auto w-[150px]
         ` }
 
         img {
@@ -117,7 +117,12 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style, first_
         <Image
             dataSal={ animation && animation.type.replace('_', '-') }
             dataSalDuration="800"
-            image={ image.formats.medium || image.formats.thumbnail }
+            image={ image.formats > 0
+                ? 
+                image.formats.small || image.formats.small || image.formats.thumbnail
+                :
+                image
+            }
         />
 
     </SSection>

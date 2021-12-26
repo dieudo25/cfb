@@ -4,6 +4,7 @@ import tw, { styled } from "twin.macro"
 import Button from "../../basic/button";
 import RichText from "../../basic/richText";
 import Image from "../../basic/image";
+import Anchor from "../../basic/anchor";
 
 const SSection = styled.section`
     ${ tw` 
@@ -46,6 +47,12 @@ const SSection = styled.section`
                 sm:mb-10
             ` }
 
+            em {
+                ${tw`                    
+                    text-second-500  not-italic
+                `}
+            }
+
             p {
                 ${ tw`
                     text-justify
@@ -65,7 +72,7 @@ const SSection = styled.section`
         }
     }
 
-    div.img-container {
+    div.img-container.c2a-img {
         ${ tw`
             row-span-1 w-full 
             sm:row-start-1
@@ -103,27 +110,45 @@ const SSection = styled.section`
     }
 `
 
-const C2AImage = ({ data: { strapi_component, text, button, image, style, first_element, animation } }) => (
+const C2AImage = ({ data: { strapi_component, text, button, image, style, first_element, animation, anchor_down, anchor_up } }) => (
     <SSection
         id={ style && style.css_id }
         className={ `component ${strapi_component} ${style && style.css_classes }` }
         first_element={ first_element }
         button={ button }
     >   
+
+        { anchor_up && 
+            <Anchor 
+                anchor={ anchor_up } 
+                position="top"
+                className="anchor-home-section" 
+            />
+        }
+
         <div className="c2a">
             <RichText text={ text }/>
             { button && <Button button={ button }/> }
         </div>
         <Image
-            dataSal={ animation && animation.type.replace('_', '-') }
+            className="c2a-img"
+            dataSal={ animation && animation.type.replaceAll('_', '-') }
             dataSalDuration="800"
             image={ image.formats > 0
                 ? 
-                image.formats.small || image.formats.small || image.formats.thumbnail
+                image.formats.small || image.formats.medium || image.formats.thumbnail
                 :
                 image
             }
         />
+
+        { anchor_down && 
+            <Anchor 
+                anchor={ anchor_down } 
+                position="bottom"
+                className="anchor-home-section" 
+            />
+        }
 
     </SSection>
 )

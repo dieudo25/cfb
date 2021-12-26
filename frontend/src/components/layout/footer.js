@@ -52,7 +52,7 @@ const SFooter = styled.footer`
 
         .menu {
             ${ tw`
-                flex-col justify-center
+                flex-col justify-center gap-[25px]
                 lg:justify-start
             ` }
 
@@ -148,7 +148,7 @@ const Footer = () => {
                 </div>
                 <MenuList menu={ menu } isMenuActive={ true }  />
                 <div className="footer-cards">
-                    { card.map((item) => <Card data={ item } />) }
+                    { card.map((item) => <Card key={item.id} data={ item } />) }
                 </div>
             </div>
             <div className="footer-copyright"><p>{ copyright }</p></div>

@@ -32,6 +32,11 @@
       "type": "component",
       "repeatable": false,
       "component": "animation.animation"
+    },
+    "anchor_down": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link.anchors"
     }
   }
 }

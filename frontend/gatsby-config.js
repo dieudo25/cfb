@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-anchor-links`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {

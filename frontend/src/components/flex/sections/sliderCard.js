@@ -6,7 +6,7 @@ import "../../../style/slick.css";
 
 import RichTextButton from "./richTextButton";
 import Card from "../../basic/card";
-
+import Anchor from "../../basic/anchor";
 
 
 
@@ -149,7 +149,9 @@ const SliderCard = ({
         first_element,
         button,
         animation_text,
-        animation_button 
+        animation_button,
+        anchor_down,
+        anchor_up,
     } 
 }) => {
 
@@ -211,6 +213,13 @@ const SliderCard = ({
             id={ style && style.css_id }
             className={ `component ${strapi_component} ${style && style.css_classes }` }
         >
+            { anchor_up && 
+                <Anchor 
+                    anchor={ anchor_up } 
+                    position="top"
+                    className="anchor-home-section" 
+                />
+            }
             <RichTextButton data={ richTextButton } />
             <Slider { ...slideSettings }>
                 {cards.map((item) => (
@@ -219,6 +228,15 @@ const SliderCard = ({
                     </Link>
                 ))}
             </Slider>
+
+            { anchor_down && 
+                <Anchor 
+                    anchor={ anchor_down } 
+                    position="bottom"
+                    className="anchor-home-section" 
+                />
+            }
+
         </SSection>
     )
 }

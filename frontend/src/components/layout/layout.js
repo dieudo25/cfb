@@ -51,7 +51,7 @@ const SPageContainer = styled.div`
         
       ` }
 
-      &:not(:first-child) {
+      &:not(:first-of-type) {
         ${ tw`
          
         ` }
@@ -64,10 +64,21 @@ const SPageContainer = styled.div`
       }
     }
 
-    section.service-section.service-how {
-      ${ tw`
-        mt-0
-      ` }
+    section {
+      &.home-section {
+        ${ tw`
+          relative
+        ` }
+      }
+
+      &.service-section {
+        &..service-how {
+          ${ tw`
+            mt-0
+          ` }
+        }
+      }
+
     }
 
     #footer {

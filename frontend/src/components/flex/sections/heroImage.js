@@ -3,13 +3,14 @@ import tw, { styled } from "twin.macro"
 
 import Image from "../../basic/image";
 import RichText from "../../basic/richText";
+import Anchor from "../../basic/anchor";
 
 const SSection = styled.section`
     ${ tw`
         w-screen h-screen grid mx-auto my-0 grid-rows-1 grid-cols-1
     ` }
 
-    div.img-container {
+    div.img-container.hero-image {
         ${ tw`
             w-screen h-screen
         ` }
@@ -45,17 +46,26 @@ const SSection = styled.section`
 
 `
 
-const HeroImage = ({ data: { strapi_component, text, image, style, animation } }) => (
+const HeroImage = ({ data: { strapi_component, text, image, style, animation, anchor_down } }) => (
     <SSection 
         id={ style && style.css_id }
         className={ `component ${strapi_component} ${style && style.css_classes }` }
     >
-        <Image image={ image } />
+        <Image image={ image } className="hero-image"/>
         <RichText 
-            dataSal={ animation && animation.type.replace('_', '-') }
+            dataSal={ animation && animation.type.replaceAll('_', '-') }
             dataSalDuration="800"
             text={ text }
         />
+
+        { anchor_down && 
+            <Anchor 
+                anchor={ anchor_down } 
+                position="bottom" 
+                className="anchor-home-section" 
+            /> 
+        }
+
     </SSection>
 )
 

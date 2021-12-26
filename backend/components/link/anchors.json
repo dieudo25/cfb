@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_link_anchors",
+  "info": {
+    "name": "anchors",
+    "icon": "anchor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "to": {
+      "type": "enumeration",
+      "enum": [
+        "home_section_1",
+        "home_section_2",
+        "home_section_3",
+        "home_section_4"
+      ]
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

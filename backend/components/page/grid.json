@@ -20,6 +20,11 @@
       "type": "component",
       "repeatable": false,
       "component": "style.style"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button"
     }
   }
 }

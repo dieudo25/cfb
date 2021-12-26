@@ -44,6 +44,21 @@
       "type": "component",
       "repeatable": false,
       "component": "animation.animation"
+    },
+    "color": {
+      "type": "component",
+      "repeatable": false,
+      "component": "style.color"
+    },
+    "anchor_up": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link.anchors"
+    },
+    "anchor_down": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link.anchors"
     }
   }
 }

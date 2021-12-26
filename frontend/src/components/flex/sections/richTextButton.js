@@ -69,7 +69,7 @@ const RichTextButton = ({ data: { strapi_component, text, button, first_element,
         first_element={ first_element }
     >
         <RichText 
-            dataSal={ animation_text && animation_text.type.replace('_', '-') }
+            dataSal={ animation_text && animation_text.type.replaceAll('_', '-') }
             dataSalDuration="800"
             text={ text }
         />
@@ -77,7 +77,7 @@ const RichTextButton = ({ data: { strapi_component, text, button, first_element,
         { button && 
             <Button 
                 button={ button }
-                dataSal={ animation_button && animation_button.type.replace('_', '-') }
+                dataSal={ animation_button && animation_button.type.replaceAll('_', '-') }
                 dataSalDuration="800"
             />
         }

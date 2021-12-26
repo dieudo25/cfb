@@ -6,7 +6,7 @@ import capitalizeFirstChar from "../../../utils/string";
 
 const SSection = styled.section`
     ${ tw`
-        relative h-[250px]
+        relative h-[400px]
         sm:h-[300px]
         md:h-[400px]
 
@@ -21,7 +21,7 @@ const SSection = styled.section`
             ${ tw`
                 object-cover opacity-60
             ` }
-
+            
             ${ ({ className }) => (className.includes("header-services") && tw`
                 object-center
                 sm:object-[0% 26%]
@@ -31,6 +31,12 @@ const SSection = styled.section`
                 object-center
                 sm:object-[0% 26%]
             `) }
+
+            ${ ({ className }) => (className.includes("header-service-every-day-life") && tw`
+                object-center
+                sm:object-[0% 37%]
+            `) }
+
         }
     }
 
@@ -41,8 +47,8 @@ const SSection = styled.section`
 
         h1 {
             ${tw`
-                w-10/12 max-w-[960px] m-auto text-white text-center
-                md:text-left
+                max-w-[960px] m-auto text-white text-center
+                md:w-10/12 md:text-left
             ` }
         }
     }

@@ -4,6 +4,7 @@ import tw, { styled } from "twin.macro"
 
 import RichText from "../../basic/richText";
 import Card from "../../basic/card";
+import Button from "../../basic/button";
 
 const SSection = styled.section`
     ${ tw`
@@ -13,6 +14,10 @@ const SSection = styled.section`
     .grid-text {
         ${ tw`
             text-center
+        ` }
+
+        ${ ({ className }) => className.includes('contact-grid') && tw`
+            mb-[50px]
         ` }
 
         ${ ({ className }) => className.includes('services-grid') && tw`
@@ -97,9 +102,15 @@ const SSection = styled.section`
         }
     }
 
+    .btn-container {
+        ${ tw`
+            w-fit-content mx-auto mt-[50px]
+        ` }
+    }
+
 `
 
-const Grid = ( { data: { strapi_component, text, cards, style } }) => (
+const Grid = ( { data: { strapi_component, text, cards, style, button } }) => (
     <SSection
         id={ style && style.css_id }
         className={ `component ${strapi_component} ${style && style.css_classes }` }
@@ -116,6 +127,7 @@ const Grid = ( { data: { strapi_component, text, cards, style } }) => (
             ))
             }
         </div>
+        { button && <Button button={ button }/> }
     </SSection>
 )
 

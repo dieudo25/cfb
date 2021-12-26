@@ -97,13 +97,13 @@ const RichText2Image = ({
         <RichText text={ text } className='text'/>
         <Image 
             image={image_1}
-            dataSal={ animation_image_1 && animation_image_1.type.replace('_', '-') }
+            dataSal={ animation_image_1 && animation_image_1.type.replaceAll('_', '-') }
             dataSalDuration="800"
             className = 'image-1'
         />
         <Image 
             image={image_2}
-            dataSal={ animation_image_2 && animation_image_2.type.replace('_', '-') }
+            dataSal={ animation_image_2 && animation_image_2.type.replaceAll('_', '-') }
             dataSalDuration="800"
             className= 'image-2'
         />

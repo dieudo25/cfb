@@ -51,6 +51,16 @@
     },
     "text": {
       "type": "richtext"
+    },
+    "anchor_up": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link.anchors"
+    },
+    "anchor_down": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link.anchors"
     }
   }
 }

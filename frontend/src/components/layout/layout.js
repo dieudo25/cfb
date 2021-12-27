@@ -72,10 +72,16 @@ const SPageContainer = styled.div`
       }
 
       &.service-section {
-        &..service-how {
+        &.service-how {
           ${ tw`
-            mt-0
+            
           ` }
+
+            img {
+              ${ tw`
+                object-contain
+              ` }
+            }
         }
       }
 

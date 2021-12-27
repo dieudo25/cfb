@@ -74,7 +74,7 @@ const SSection = styled.section`
 
     div.img-container.c2a-img {
         ${ tw`
-            row-span-1 w-full 
+            row-span-1 w-full h-[200px] 
             sm:row-start-1
             lg:h-[455px] lg:col-span-2 
         ` }
@@ -97,14 +97,19 @@ const SSection = styled.section`
             lg:h-fit-content
         ` }
 
-        img {
+        img { 
             ${ tw`
-                w-full h-full object-contain
+                w-full h-full object-cover
                 lg:object-cover
 
             ` }
 
             ${ ({ className }) => className.includes('home-section') && tw`
+            ` }
+
+            ${ ({ className }) => className.includes('about-cocof') && tw`
+                object-contain
+                lg:object-cover
             ` }
             
             ${ ({ className }) => className.includes('service-section') && tw`

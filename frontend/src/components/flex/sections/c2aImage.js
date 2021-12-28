@@ -147,9 +147,9 @@ const C2AImage = ({ data: { strapi_component, text, button, image, style, first_
             className="c2a-img"
             dataSal={ animation && animation.type.replaceAll('_', '-') }
             dataSalDuration="800"
-            image={ image.formats > 0
+            image={ image.formats > 0 && image.formats !== null
                 ? 
-                image.formats.small || image.formats.medium || image.formats.thumbnail
+                image.formats.small || image.formats.medium
                 :
                 image
             }

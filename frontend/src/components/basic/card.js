@@ -53,7 +53,7 @@ const SCard = styled.div`
 const Card = ({ data: { color, image, text }, className } ) => (
     <SCard className={`card-container ${ className }`} color={ color }>
         <Image 
-            image={ image.formats > 0
+            image={ image.formats > 0 && image.formats !== null
                 ? 
                 image.formats.small || image.formats.thumbnail
                 :

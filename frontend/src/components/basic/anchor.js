@@ -45,7 +45,7 @@ const Anchor = ({ anchor, className, position }) => (
         position={ position }
     >
         <Image
-            image={ anchor.image.formats > 0 || anchor.image.formats !== null
+            image={ anchor.image.formats > 0 && anchor.image.formats !== null
                 ? 
                 anchor.image.formats.small || anchor.image.formats.medium || anchor.image.formats.thumbnail
                 :

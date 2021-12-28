@@ -60,7 +60,7 @@ const SSection = styled.section`
 
       &.menu.is-visible {
         ${ tw`
-          max-mdd:h-[calc(100vh - 80px)]
+          max-mdd:h-[calc(100vh - 84px)]
         ` }
 
         a {

@@ -1,18 +1,19 @@
 import React from "react";
 import tw, { styled } from "twin.macro"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { Link } from "gatsby";
 
 import Image from "./image";
 
-const SAnchorLink = styled(AnchorLink)`
+const SAnchorLink = styled(Link)`
     ${ ({ className }) => className.includes('home-section') && tw`
         hidden    
-        md:block md:absolute md:left-[calc(50% - calc(40px / 2))] 
+        md:block md:absolute md:left-[calc(50% - calc(20px / 2))] 
     ` }
 
     .anchor-img {
         ${ ({ className }) => className.includes('home-section') && tw`
-            md:w-[40px] h-[40px]
+            md:w-[20px] h-[20px]
         ` }
 
         img {
@@ -54,7 +55,7 @@ const Anchor = ({ anchor, className, position }) => (
 
             className="anchor-img"
         />
-    </SAnchorLink>
+    </SAnchorLink>                      
 )
 
 export default Anchor;

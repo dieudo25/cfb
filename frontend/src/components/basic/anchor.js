@@ -1,11 +1,10 @@
 import React from "react";
 import tw, { styled } from "twin.macro"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
-import { Link } from "gatsby";
 
 import Image from "./image";
 
-const SAnchorLink = styled(Link)`
+const SAnchorLink = styled(AnchorLink)`
     ${ ({ className }) => className.includes('home-section') && tw`
         hidden    
         md:block md:absolute md:left-[calc(50% - calc(20px / 2))] 

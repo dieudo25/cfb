@@ -6,7 +6,8 @@ import Image from "./image";
 
 const SAnchorLink = styled(AnchorLink)`
     ${ ({ className }) => className.includes('home-section') && tw`
-        md:absolute md:left-[calc(50% - calc(40px / 2))]
+        hidden    
+        md:block md:absolute md:left-[calc(50% - calc(40px / 2))] 
     ` }
 
     .anchor-img {

@@ -47,25 +47,29 @@ const SSection = styled.section`
       }
     }
 
-    nav.menu.is-visible {
+    nav {
       ${ tw`
-        max-mdd:h-[calc(100vh - 80px)]
-      ` }
-    }
-
-    nav.menu.is-hidden {
-      ${ tw`
-        max-mdd:hidden max-mdd:h-0 transition ease-in-out transition-all
+        max-mdd:h-0 transition ease-in-out transition-all
       ` }
 
       a {
         ${ tw`
-          max-mdd:hidden
+          max-mdd:hidden transition ease-in-out transition-all
         ` }
       }
-    }
 
+      &.menu.is-visible {
+        ${ tw`
+          max-mdd:h-[calc(100vh - 80px)]
+        ` }
 
+        a {
+          ${ tw`
+            max-mdd:block
+          ` }
+        }
+      }
+    } 
   }
 `;
 
@@ -108,7 +112,7 @@ const Header = () => {
           </Link>
           <button className="small-device" aria-label="toggle-nav-menu" onClick={ () => setIsMenuActive(!isMenuActive) } />
         </div>
-        <MenuList menu={ menu } isMenuActive={ isMenuActive }  />
+        <MenuList menu={ menu } isMenuActive={ isMenuActive } className="header-nav" />
       </div>
     </SSection>
   )

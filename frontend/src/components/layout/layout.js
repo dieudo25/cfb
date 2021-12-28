@@ -42,7 +42,7 @@ const SPageContainer = styled.div`
     `) }
 
     ${ ({ className }) => className === "page-accueil" && tw`
-      max-h-screen overflow-y-scroll
+      /* max-h-screen overflow-y-scroll */
     ` }
 
     > section, footer {

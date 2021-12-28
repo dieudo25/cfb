@@ -33,7 +33,6 @@ function Seo({ description, lang, meta, title }) {
     <Helmet
       htmlAttributes={{
         lang,
-        class: "scroll-smooth"
       }}
       title={ capitalizeFirstChar(title) }
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}

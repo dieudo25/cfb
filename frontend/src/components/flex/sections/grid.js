@@ -8,22 +8,12 @@ import Button from "../../basic/button";
 
 const SSection = styled.section`
     ${ tw`
-        w-10/12 max-w-[950px] m-auto
+        w-10/12 max-w-[950px] m-auto grid gap-10 justify-items-center
     ` }
 
-    .grid-text {
-        ${ tw`
-            text-center
-        ` }
-
-        ${ ({ className }) => className.includes('contact-grid') && tw`
-            mb-[50px]
-        ` }
-
-        ${ ({ className }) => className.includes('services-grid') && tw`
-            mb-[50px]
-        ` }
-    }
+    ${ ({ className }) => className.includes('contact-grid') && tw`
+        justify-items-start
+    ` }
  
     .cards-grid {
         ${ tw`
@@ -65,6 +55,12 @@ const SSection = styled.section`
                     w-12 h-12
                 ` }
 
+                img {
+                    ${ ({ className }) => className.includes('services-grid') && tw`
+                        w-full h-full object-cover z-10 transition
+                    ` }
+                }
+
                 &:hover {
 
                     &:after {
@@ -84,12 +80,6 @@ const SSection = styled.section`
                         ` }
                     }
                 }
-
-                img {
-                    ${ ({ className }) => className.includes('services-grid') && tw`
-                        w-full h-full object-cover z-10 transition
-                    ` }
-                }
             }
 
             .rich-text {
@@ -100,12 +90,6 @@ const SSection = styled.section`
                 }   
             }
         }
-    }
-
-    .btn-container {
-        ${ tw`
-            w-fit-content mx-auto mt-[50px]
-        ` }
     }
 
 `

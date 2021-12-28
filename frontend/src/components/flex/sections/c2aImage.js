@@ -49,7 +49,7 @@ const SSection = styled.section`
 
             em {
                 ${tw`                    
-                    text-second-500  not-italic
+                    text-main-500  not-italic
                 `}
             }
 
@@ -109,7 +109,7 @@ const SSection = styled.section`
 
             ${ ({ className }) => className.includes('about-cocof') && tw`
                 object-contain
-                lg:object-cover
+                lg:object-contain
             ` }
             
             ${ ({ className }) => className.includes('service-section') && tw`

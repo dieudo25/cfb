@@ -8,7 +8,6 @@ const Image = ({ image: { url, alternativeText }, dataSal, dataSalDuration, clas
         data-sal={ dataSal }
         data-sal-duration={ dataSalDuration }
     >
-        {console.log(image)}
         <img
             src={ generateStrapiUrl(url) }
             alt={ alternativeText }

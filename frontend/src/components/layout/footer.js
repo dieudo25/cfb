@@ -146,9 +146,9 @@ const Footer = () => {
                     </Link>
                     <RichText text={ text } />
                 </div>
-                <MenuList menu={ menu } isMenuActive={ true }  />
+                <MenuList menu={ menu } isMenuActive={ true } className="footer-nav" />
                 <div className="footer-cards">
-                    { card.map((item) => <Card key={item.id} data={ item } />) }
+                    { card.map((item) => <Card key={item.id} data={ item } className="footer-card-item"/>) }
                 </div>
             </div>
             <div className="footer-copyright"><p>{ copyright }</p></div>

@@ -16,12 +16,16 @@ const SCard = styled.div`
     .rich-text {
         p {
             a {
-                ${ ({ color })  => color &&
+                ${ ({ color }) => color &&
                     `color: ${ color };`  
                 }
 
                 ${ tw`
                     no-underline
+                ` }
+
+                ${ ({ className }) => (className.includes("footer-card-item")) && tw`
+                    md:break-all
                 ` }
             }
         }
@@ -29,7 +33,7 @@ const SCard = styled.div`
 
     &:hover {
         .img-container {
-            ${ ({ className, color })  => (className.includes("services-grid") || className.includes("home-section")) && color
+            ${ ({ className, color }) => (className.includes("services-grid") || className.includes("home-section")) && color
                     ? `background-color: ${ color };`
                     :
                     tw`bg-white`    
@@ -38,7 +42,7 @@ const SCard = styled.div`
 
         .rich-text {
             p {
-                ${ ({ className, color })  => (className.includes("services-grid") || className.includes("home-section")) && color &&
+                ${ ({ className, color }) => (className.includes("services-grid") || className.includes("home-section")) && color &&
                     `color: ${ color };`  
                 }
             }

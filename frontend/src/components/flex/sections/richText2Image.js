@@ -21,6 +21,12 @@ const SSection = styled.section`
             lg:col-span-1
         ` }
 
+        em {
+            ${tw`                    
+                text-main-500  not-italic
+            `}
+        }
+
     }
 
     div.img-container.image-1 {

@@ -1,7 +1,7 @@
-/* module.exports = ({ env }) => ({
-  defaultConnection: 'default',
+module.exports = ({ env }) => ({
+  defaultConnection: env('DATABASE_CONNECTION_NAME'),
   connections: {
-    default: {
+    mysql: {
       connector: 'bookshelf',
       settings: {
         client: 'mysql',
@@ -14,13 +14,8 @@
       },
       options: {}
     },
-  },
-}); */
 
-module.exports = ({ env }) => ({
-  defaultConnection: 'default',
-  connections: {
-    default: {
+    sqlite: {
       connector: 'bookshelf',
       settings: {
         client: 'sqlite',

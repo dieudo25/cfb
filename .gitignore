@@ -110,7 +110,7 @@ backend/.env
 backend/license.txt
 backend/exports
 backend/*.cache
-backend/build
+# backend/build
 backend/.strapi-updater.json
 
 

@@ -10,7 +10,7 @@ const SMenuList = styled.nav`
 
     a {
         ${ tw`
-            w-fit-content mx-auto uppercase font-semibold no-underline text-dark-500 transition ease-in-out 
+            w-fit-content mx-auto uppercase font-semibold no-underline text-dark-500 transition ease-in-out cursor-pointer
             hover:text-second-500 hover:transition ease-in-out
         ` }
 

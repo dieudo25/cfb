@@ -1,13 +1,10 @@
 #!/bin/bash
 
-# Install Yarn
-/opt/plesk/node/14/bin/npm install yarn --scripts-prepend-node-path
-
 # Install dependecies using yarn
-yarn install --scripts-prepend-node-path
+/opt/plesk/node/14/bin/npm install
 
 # Build project
-NODE_ENV=production yarn build --scripts-prepend-node-path
+NODE_ENV=production /opt/plesk/node/14/bin/npm run build --scripts-prepend-node-path
 
 # Restart node app
 touch ./tmp/restart.txt

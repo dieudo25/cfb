@@ -123,3 +123,4 @@ frontend/node_modules/
 frontend/.cache/
 frontend/public
 backend/.tmp/data.db
+frontend/.env.development

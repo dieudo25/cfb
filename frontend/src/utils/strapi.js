@@ -1,5 +1,5 @@
 function generateStrapiUrl(url) {
-    return `http://localhost:1337${url}`;
+    return `http://cms.centrefamilial.tk${url}`;
 }
 
 export default generateStrapiUrl;

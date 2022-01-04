@@ -1,5 +1,5 @@
 function generateStrapiUrl(url) {
-    return `http://cms.centrefamilial.tk${url}`;
+    return `${ process.env.URL }${ url }`;
 }
 
 export default generateStrapiUrl;
